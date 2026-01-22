@@ -1,11 +1,11 @@
 [gd_scene load_steps=16 format=3 uid="uid://bmw5q3hto54x5"]
 
-[ext_resource type="Script" uid="uid://dvrrsl3m5w25p" path="res://main_menu.gd" id="1_1ehe0"]
-[ext_resource type="Texture2D" uid="uid://dx3apfke0y50j" path="res://Images/bg3.jpg" id="2_ce3w2"]
-[ext_resource type="FontFile" uid="uid://crnvgkv3ipgdm" path="res://Fonts/DISKOPIA2.0.ttf" id="3_n45e2"]
+[ext_resource type="Script" uid="uid://dvrrsl3m5w25p" path="res://Scripts/main_menu.gd" id="1_8l4an"]
+[ext_resource type="Texture2D" uid="uid://dx3apfke0y50j" path="res://Images/bg3.jpg" id="2_n15yj"]
+[ext_resource type="FontFile" uid="uid://crnvgkv3ipgdm" path="res://Fonts/DISKOPIA2.0.ttf" id="3_emot1"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_opfnp"]
-texture = ExtResource("2_ce3w2")
+texture = ExtResource("2_n15yj")
 modulate_color = Color(0.581548, 0.5836885, 0.60377175, 1)
 
 [sub_resource type="FontFile" id="FontFile_cp0ys"]
@@ -211,14 +211,14 @@ shadow_offset = Vector2(4.835, 5.605)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wyh8j"]
 
-[node name="MainMenu" type="Control"]
+[node name="TitleScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_1ehe0")
+script = ExtResource("1_8l4an")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -245,7 +245,7 @@ grow_vertical = 2
 theme_override_colors/font_shadow_color = Color(0.7529412, 0.4117647, 0.53333336, 0.93333334)
 theme_override_constants/shadow_offset_x = 6
 theme_override_constants/shadow_offset_y = 6
-theme_override_fonts/font = ExtResource("3_n45e2")
+theme_override_fonts/font = ExtResource("3_emot1")
 theme_override_font_sizes/font_size = 71
 text = "Server Simulator"
 
@@ -264,7 +264,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 26
 
-[node name="StartButton" type="Button" parent="VBoxContainer"]
+[node name="Start" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = SubResource("FontFile_cp0ys")
@@ -275,7 +275,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_16hvj")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_vr1f0")
 text = "Start!"
 
-[node name="SettingsButton" type="Button" parent="VBoxContainer"]
+[node name="Settings" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = SubResource("FontFile_cp0ys")
@@ -286,7 +286,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_5egv6")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_vtepg")
 text = "Settings"
 
-[node name="ExitButton" type="Button" parent="VBoxContainer"]
+[node name="Exit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = SubResource("FontFile_cp0ys")
@@ -297,6 +297,6 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_m3bi6")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_wyh8j")
 text = "Exit"
 
-[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_button_pressed"]

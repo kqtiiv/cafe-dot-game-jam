@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://3i6i7utpdhxv"]
+
+[ext_resource type="PackedScene" uid="uid://megv2xypt8uj" path="res://Scenes/PauseMenu.tscn" id="1_r7jfx"]
+
+[node name="MainWorld" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.20056134, -3.0027971)
+size = Vector3(1, 0.22753906, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("1_r7jfx")]
