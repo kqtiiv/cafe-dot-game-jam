@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctcfatu8tuyf8"
-path.s3tc="res://.godot/imported/caefdot char_Circle.png-fd3cc83f24ae047984be0e382f98b784.s3tc.ctex"
+uid="uid://57l0e31814ss"
+path.s3tc="res://.godot/imported/character rigged_character texture.png-05bfeccaff4795397ab410756db63159.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "50004eb192b146eb91cacc4aaf09df7a"
+"md5": "46e1444d4ef4a53914da75fbeeedda7e"
 }
 
 [deps]
 
-source_file="res://Assets/3D/Sprites/caefdot char_Circle.png"
-dest_files=["res://.godot/imported/caefdot char_Circle.png-fd3cc83f24ae047984be0e382f98b784.s3tc.ctex"]
+source_file="res://Assets/3D/Sprites/character rigged_character texture.png"
+dest_files=["res://.godot/imported/character rigged_character texture.png-05bfeccaff4795397ab410756db63159.s3tc.ctex"]
 
 [params]
 

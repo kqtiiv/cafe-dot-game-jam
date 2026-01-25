@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cfiyhicjcsyw5"
-path="res://.godot/imported/caefdot char.glb-686e226d0045524cc2f5abe3fcac1d76.scn"
+uid="uid://s34ucnbuaed"
+path="res://.godot/imported/character rigged.glb-7020ff349c1f284dd1344ca511a45423.scn"
 
 [deps]
 
-source_file="res://Assets/3D/Sprites/caefdot char.glb"
-dest_files=["res://.godot/imported/caefdot char.glb-686e226d0045524cc2f5abe3fcac1d76.scn"]
+source_file="res://Assets/3D/Sprites/character rigged.glb"
+dest_files=["res://.godot/imported/character rigged.glb-7020ff349c1f284dd1344ca511a45423.scn"]
 
 [params]
 
