@@ -1,16 +1,40 @@
-[gd_scene load_steps=2 format=3 uid="uid://3i6i7utpdhxv"]
+[gd_scene load_steps=5 format=3 uid="uid://3i6i7utpdhxv"]
 
+[ext_resource type="PackedScene" uid="uid://dhhsekj4kfdfx" path="res://Assets/3D/World/environment.glb" id="1_8vsrk"]
 [ext_resource type="PackedScene" uid="uid://megv2xypt8uj" path="res://Scenes/PauseMenu.tscn" id="1_r7jfx"]
+[ext_resource type="PackedScene" uid="uid://cs1ae6487e1lx" path="res://Assets/3D/Sprites/caefdot char.glb" id="2_c77c4"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_o15vh"]
 
 [node name="MainWorld" type="Node3D"]
 
-[node name="Camera3D" type="Camera3D" parent="."]
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2905588, 0)
+
+[node name="environment" parent="." instance=ExtResource("1_8vsrk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.579)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.20056134, -3.0027971)
-size = Vector3(1, 0.22753906, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18228531, -0.20056134, 0.36919785)
+use_collision = true
+size = Vector3(13.569984, 0.22753906, 14.252686)
+
+[node name="Player" type="CharacterBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.83159876, 0)
+shape = SubResource("CapsuleShape3D_o15vh")
+debug_color = Color(0, 0.5973583, 0.7168702, 0.41960785)
+
+[node name="CamPivot" type="Node3D" parent="Player"]
+
+[node name="Camera3D" type="Camera3D" parent="Player/CamPivot"]
+transform = Transform3D(-0.99935186, 0.017469376, -0.031475414, 0, 0.8743573, 0.48528275, 0.035998344, 0.48496822, -0.87379056, 0, 2.6264858, -1.9623934)
+
+[node name="Node3D2" type="Node3D" parent="Player"]
+
+[node name="armature_004" parent="Player/Node3D2" instance=ExtResource("2_c77c4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14182377, -0.08679181, -0.011492074)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
