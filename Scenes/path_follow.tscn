@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ejtf25hfn0ny"]
+
+[ext_resource type="Script" uid="uid://daxcvu8djc60i" path="res://path_follow.gd" id="1_rwv02"]
+[ext_resource type="PackedScene" uid="uid://ue7r74512xiy" path="res://Assets/3D/Sprites/character_rigged.tscn" id="2_tqmci"]
+
+[node name="PathFollow" type="PathFollow3D"]
+loop = false
+script = ExtResource("1_rwv02")
+
+[node name="character_rigged" parent="." instance=ExtResource("2_tqmci")]
