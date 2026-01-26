@@ -1,12 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://bmw5q3hto54x5"]
+[gd_scene load_steps=15 format=3 uid="uid://bmw5q3hto54x5"]
 
 [ext_resource type="Script" uid="uid://dvrrsl3m5w25p" path="res://Scripts/main_menu.gd" id="1_8l4an"]
-[ext_resource type="Texture2D" uid="uid://dx3apfke0y50j" path="res://Images/bg3.jpg" id="2_n15yj"]
-[ext_resource type="FontFile" uid="uid://crnvgkv3ipgdm" path="res://Fonts/DISKOPIA2.0.ttf" id="3_emot1"]
+[ext_resource type="Texture2D" uid="uid://bf0fp5wkkd33p" path="res://Images/title_test01.png" id="2_vmg2h"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_opfnp"]
-texture = ExtResource("2_n15yj")
-modulate_color = Color(0.581548, 0.5836885, 0.60377175, 1)
+texture = ExtResource("2_vmg2h")
+modulate_color = Color(0.9607843, 0.74509805, 0.52156866, 1)
 
 [sub_resource type="FontFile" id="FontFile_cp0ys"]
 cache/0/30/0/ascent = 0.0
@@ -136,76 +135,90 @@ cache/0/115/0/underline_thickness = 0.0
 cache/0/115/0/scale = 1.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yhxw7"]
-bg_color = Color(0.8595508, 0.59767026, 0.64435333, 1)
+bg_color = Color(0.5176471, 0.23921569, 0.14509805, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
-shadow_color = Color(0.5254902, 0.25882354, 0.3254902, 0.6392157)
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color(0.99215686, 0.95686275, 0.72156864, 0)
 shadow_size = 10
 shadow_offset = Vector2(4.835, 5.605)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_trj04"]
-bg_color = Color(0.73655903, 0.3361412, 0.5161018, 1)
+bg_color = Color(0.5176471, 0.23921569, 0.14509805, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
-shadow_color = Color(0.5254902, 0.25882354, 0.3254902, 0.6392157)
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color(0.5254902, 0.25882354, 0.3254902, 0)
 shadow_size = 10
 shadow_offset = Vector2(4.835, 5.605)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_16hvj"]
-bg_color = Color(0.7155324, 0.4003555, 0.46541792, 1)
+bg_color = Color(0.22723183, 0.53280044, 0.69686294, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
-shadow_color = Color(0.5254902, 0.25882354, 0.3254902, 0.6392157)
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color(0.5254902, 0.25882354, 0.3254902, 0)
 shadow_size = 10
 shadow_offset = Vector2(4.835, 5.605)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vr1f0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t1dhk"]
-bg_color = Color(0.7372549, 0.3372549, 0.5176471, 1)
+bg_color = Color(0.5176471, 0.23921569, 0.14509805, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
-shadow_color = Color(0.5254902, 0.25882354, 0.3254902, 0.6392157)
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color(0.5254902, 0.25882354, 0.3254902, 0)
 shadow_size = 10
 shadow_offset = Vector2(4.835, 5.605)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5egv6"]
-bg_color = Color(0.7137255, 0.4, 0.46666667, 1)
+bg_color = Color(0.22723183, 0.53280044, 0.69686294, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
-shadow_color = Color(0.5254902, 0.25882354, 0.3254902, 0.6392157)
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color(0.5254902, 0.25882354, 0.3254902, 0)
 shadow_size = 10
 shadow_offset = Vector2(4.835, 5.605)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vtepg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8dnnj"]
-bg_color = Color(0.7372549, 0.3372549, 0.5176471, 1)
+bg_color = Color(0.5176471, 0.23921569, 0.14509805, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
-shadow_color = Color(0.5254902, 0.25882354, 0.3254902, 0.6392157)
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color(0.5254902, 0.25882354, 0.3254902, 0)
 shadow_size = 10
 shadow_offset = Vector2(4.835, 5.605)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m3bi6"]
-bg_color = Color(0.7137255, 0.4, 0.46666667, 1)
+bg_color = Color(0.22723183, 0.53280044, 0.69686294, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
-shadow_color = Color(0.5254902, 0.25882354, 0.3254902, 0.6392157)
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color(0.5254902, 0.25882354, 0.3254902, 0)
 shadow_size = 10
 shadow_offset = Vector2(4.835, 5.605)
 
@@ -229,26 +242,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_opfnp")
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -402.0
-offset_top = -195.0
-offset_right = 443.0
-offset_bottom = -95.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_shadow_color = Color(0.7529412, 0.4117647, 0.53333336, 0.93333334)
-theme_override_constants/shadow_offset_x = 6
-theme_override_constants/shadow_offset_y = 6
-theme_override_fonts/font = ExtResource("3_emot1")
-theme_override_font_sizes/font_size = 71
-text = "Server Simulator"
-
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -256,10 +249,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -142.5
-offset_top = -67.0
-offset_right = 142.5
-offset_bottom = 154.625
+offset_left = -455.0
+offset_top = 74.0
+offset_right = -193.08154
+offset_bottom = 274.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 26
@@ -267,6 +260,11 @@ theme_override_constants/separation = 26
 [node name="Start" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
+theme_override_colors/font_focus_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
+theme_override_colors/font_pressed_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
+theme_override_colors/font_hover_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
 theme_override_fonts/font = SubResource("FontFile_cp0ys")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_yhxw7")
@@ -278,6 +276,11 @@ text = "Start!"
 [node name="Settings" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
+theme_override_colors/font_focus_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
+theme_override_colors/font_pressed_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
+theme_override_colors/font_hover_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
 theme_override_fonts/font = SubResource("FontFile_cp0ys")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_yhxw7")
@@ -289,6 +292,11 @@ text = "Settings"
 [node name="Exit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
+theme_override_colors/font_focus_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
+theme_override_colors/font_pressed_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
+theme_override_colors/font_hover_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
 theme_override_fonts/font = SubResource("FontFile_cp0ys")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_yhxw7")

@@ -9,8 +9,12 @@
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.20056134, -3.0027971)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8414824, -0.20056134, -3.0027971)
 size = Vector3(1, 0.22753906, 1)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1439278, 0.46553576, -0.68758106)
+size = Vector3(1, 1.0169678, 1)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
