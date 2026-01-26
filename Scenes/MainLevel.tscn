@@ -27,7 +27,7 @@ size = Vector2(20, 20)
 data = PackedVector3Array(10, 0, 10, -10, 0, 10, 10, 0, -10, -10, 0, 10, -10, 0, -10, 10, 0, -10)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0e82a"]
-size = Vector3(1.2846069, 2.0848694, 1.761383)
+size = Vector3(0.50450134, 2.0848694, 1.761383)
 
 [sub_resource type="Curve3D" id="Curve3D_ymtjv"]
 _data = {
@@ -149,7 +149,7 @@ script = ExtResource("4_2a20n")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0215499, -0.05114758, 6.4616194)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/environment/GetRice/RiceArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13387084, 1.0724323, -0.46554852)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0077035427, 1.0724323, -0.46554852)
 shape = SubResource("BoxShape3D_0e82a")
 
 [node name="Prompt" type="Label3D" parent="World/environment/GetRice"]
