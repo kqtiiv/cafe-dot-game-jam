@@ -1,7 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://bmw5q3hto54x5"]
+[gd_scene load_steps=19 format=3 uid="uid://bmw5q3hto54x5"]
 
 [ext_resource type="Script" uid="uid://dvrrsl3m5w25p" path="res://Scripts/main_menu.gd" id="1_8l4an"]
+[ext_resource type="Script" uid="uid://cnhpx34br3d0j" path="res://Scenes/options_ui.gd" id="2_8l4an"]
 [ext_resource type="Texture2D" uid="uid://bf0fp5wkkd33p" path="res://Images/title_test01.png" id="2_vmg2h"]
+[ext_resource type="Script" uid="uid://ddkganw2c3ne" path="res://Scenes/music_manager.gd" id="4_emot1"]
+[ext_resource type="Script" uid="uid://b4cb3c8a2ie74" path="res://Scenes/sound_manager.gd" id="4_n15yj"]
+[ext_resource type="AudioStream" uid="uid://sc1rh6ov8y1t" path="res://Assets/Sounds/PLACEHOLDER.mp3" id="5_i5sur"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_opfnp"]
 texture = ExtResource("2_vmg2h")
@@ -231,9 +235,55 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_8l4an")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="OptionsUI" type="Panel" parent="." node_paths=PackedStringArray("soundEffectsButton", "musicButton", "closeButton")]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_8l4an")
+soundEffectsButton = NodePath("Content/SoundEffectsButton")
+musicButton = NodePath("Content/MusicButton")
+closeButton = NodePath("Content/CloseButton")
+
+[node name="Content" type="VBoxContainer" parent="OptionsUI"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -201.0
+offset_top = 163.0
+offset_right = 199.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="OptionsText" type="Label" parent="OptionsUI/Content"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 61
+text = "Options"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="SoundEffectsButton" type="Button" parent="OptionsUI/Content"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 29
+text = "Sound Effects: 5"
+
+[node name="MusicButton" type="Button" parent="OptionsUI/Content"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 29
+text = "Music: 5"
+
+[node name="CloseButton" type="Button" parent="OptionsUI/Content"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 29
+text = "CLOSE"
+
+[node name="MainMenuUI" type="Panel" parent="." node_paths=PackedStringArray("playButton", "optionsButton", "quitButton")]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -241,8 +291,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_opfnp")
+script = ExtResource("1_8l4an")
+playButton = NodePath("Content/Start")
+optionsButton = NodePath("Content/Settings")
+quitButton = NodePath("Content/Exit")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Content" type="VBoxContainer" parent="MainMenuUI"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -257,7 +311,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 26
 
-[node name="Start" type="Button" parent="VBoxContainer"]
+[node name="Start" type="Button" parent="MainMenuUI/Content"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
@@ -273,7 +327,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_16hvj")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_vr1f0")
 text = "Start!"
 
-[node name="Settings" type="Button" parent="VBoxContainer"]
+[node name="Settings" type="Button" parent="MainMenuUI/Content"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
@@ -289,7 +343,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_5egv6")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_vtepg")
 text = "Settings"
 
-[node name="Exit" type="Button" parent="VBoxContainer"]
+[node name="Exit" type="Button" parent="MainMenuUI/Content"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
@@ -305,6 +359,16 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_m3bi6")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_wyh8j")
 text = "Exit"
 
-[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_button_pressed"]
+[node name="MusicManager" type="Node3D" parent="." node_paths=PackedStringArray("audioStreamPlayer")]
+script = ExtResource("4_emot1")
+audioStreamPlayer = NodePath("Placeholder")
+
+[node name="Placeholder" type="AudioStreamPlayer" parent="MusicManager"]
+stream = ExtResource("5_i5sur")
+
+[node name="SoundManager" type="Node3D" parent="."]
+script = ExtResource("4_n15yj")
+
+[connection signal="pressed" from="MainMenuUI/Content/Start" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MainMenuUI/Content/Settings" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="MainMenuUI/Content/Exit" to="." method="_on_exit_button_pressed"]

@@ -1,23 +1,17 @@
-extends Control
+extends Panel
 
+@export var playButton: Button
+@export var optionsButton: Button
+@export var quitButton: Button
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+func _ready() -> void:
+	playButton.grab_focus()
+	
+	playButton.pressed.connect(func(): get_tree().change_scene_to_file("res://Scenes/MainLevel.tscn"))
+	optionsButton.pressed.connect(func(): 
+		hide()
+		OptionsUI.Instance.Show(show)
+	)
+	quitButton.pressed.connect(func(): get_tree().quit())
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-
-func _on_start_button_pressed():
-	get_tree().change_scene_to_file("res://Scenes/MainLevel.tscn")
-
-
-func _on_settings_button_pressed():
-	pass # Replace with function body.
-
-
-func _on_exit_button_pressed():
-	get_tree().quit()
+	Engine.time_scale = 1.0
