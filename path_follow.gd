@@ -1,5 +1,7 @@
 extends PathFollow3D
 
+signal npc_sat_down 
+
 @export var speed: float = 2.0
 @export var sit_animation_name: String = "Sit"
 
@@ -25,3 +27,5 @@ func perform_sit_action():
 		
 	if anim_player:
 		anim_player.play(sit_animation_name, 0.5)
+	
+	npc_sat_down.emit()
