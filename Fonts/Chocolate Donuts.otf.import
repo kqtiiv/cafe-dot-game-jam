@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://crnvgkv3ipgdm"
-path="res://.godot/imported/DISKOPIA2.0.ttf-aab2cf9b051fb7a31495985addb616e3.fontdata"
+uid="uid://bsetqd2y0fnfh"
+path="res://.godot/imported/Chocolate Donuts.otf-135ef1e26d9666eb85da0bc2cca06d15.fontdata"
 
 [deps]
 
-source_file="res://Fonts/DISKOPIA2.0.ttf"
-dest_files=["res://.godot/imported/DISKOPIA2.0.ttf-aab2cf9b051fb7a31495985addb616e3.fontdata"]
+source_file="res://Fonts/Chocolate Donuts.otf"
+dest_files=["res://.godot/imported/Chocolate Donuts.otf-135ef1e26d9666eb85da0bc2cca06d15.fontdata"]
 
 [params]
 
