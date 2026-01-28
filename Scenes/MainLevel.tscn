@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://3i6i7utpdhxv"]
+[gd_scene load_steps=15 format=3 uid="uid://3i6i7utpdhxv"]
 
 [ext_resource type="PackedScene" uid="uid://dhhsekj4kfdfx" path="res://Assets/3D/World/environment.glb" id="1_8vsrk"]
 [ext_resource type="Script" uid="uid://c8r0w8ay0pbyh" path="res://Scenes/world.gd" id="1_o15vh"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c005gn3ouf4f0" path="res://Assets/3D/Sprites/armature_004.tscn" id="2_c77c4"]
 [ext_resource type="PackedScene" uid="uid://ejtf25hfn0ny" path="res://Scenes/path_follow.tscn" id="2_ymtjv"]
 [ext_resource type="Script" uid="uid://dtptta1hasb5i" path="res://Scenes/chopping-board.gd" id="4_2a20n"]
+[ext_resource type="FontFile" uid="uid://bskeu06nps0kw" path="res://Fonts/Start Story.ttf" id="5_0e82a"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o15vh"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -46,7 +47,11 @@ npc_scene = ExtResource("2_ymtjv")
 environment = SubResource("Environment_ymtjv")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="World"]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+transform = Transform3D(-0.8077981, -0.58414173, -0.07899817, -0.31218937, 0.31028765, 0.8979195, -0.50000006, 0.75, -0.43301266, 0, 3.6415045, 0)
+light_color = Color(0.9900157, 0.9219829, 0.85536623, 1)
+light_energy = 0.3
+light_indirect_energy = 2.463
+light_specular = 2.366
 shadow_enabled = true
 
 [node name="Wall" type="CSGBox3D" parent="World"]
@@ -98,8 +103,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13387084, 1.0724323, -0.465
 shape = SubResource("BoxShape3D_0e82a")
 
 [node name="Prompt" type="Label3D" parent="World/environment/Chopping"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23136264, 1.2400799, 6.3448925)
+transform = Transform3D(-0.99993867, 0, -0.01108256, 0, 1, 0, 0.01108256, 0, -0.99993867, -0.23136264, 1.6627644, 6.3448925)
+modulate = Color(0.22723183, 0.53280044, 0.69686294, 1)
+outline_modulate = Color(0.16470589, 0.41960785, 0.5529412, 1)
 text = "E"
+font = ExtResource("5_0e82a")
+font_size = 42
 
 [node name="Washing" type="Node3D" parent="World/environment"]
 script = ExtResource("4_2a20n")
@@ -112,8 +121,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13387084, 1.0724323, -0.465
 shape = SubResource("BoxShape3D_0e82a")
 
 [node name="Prompt" type="Label3D" parent="World/environment/Washing"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4919825, 1.2400799, 6.3448925)
+transform = Transform3D(-0.99868286, 0, 0.051307768, 0, 1, 0, -0.051307768, 0, -0.99868286, -1.4919825, 1.6508743, 6.353689)
+modulate = Color(0.22723183, 0.53280044, 0.69686294, 1)
+outline_modulate = Color(0.16470589, 0.41960785, 0.5529412, 1)
 text = "E"
+font = ExtResource("5_0e82a")
+font_size = 42
 
 [node name="Cooking" type="Node3D" parent="World/environment"]
 script = ExtResource("4_2a20n")
@@ -126,8 +139,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13387084, 1.0724323, -0.465
 shape = SubResource("BoxShape3D_0e82a")
 
 [node name="Prompt" type="Label3D" parent="World/environment/Cooking"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1814978, 1.2400799, 6.3448925)
+transform = Transform3D(-0.99748427, 0, -0.07088806, 0, 1, 0, 0.07088806, 0, -0.99748427, -3.1814978, 1.6272712, 6.3536167)
+modulate = Color(0.22723183, 0.53280044, 0.69686294, 1)
+outline_modulate = Color(0.16470589, 0.41960785, 0.5529412, 1)
 text = "E"
+font = ExtResource("5_0e82a")
+font_size = 42
 
 [node name="GetEggs" type="Node3D" parent="World/environment"]
 script = ExtResource("4_2a20n")
@@ -140,8 +157,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13387084, 1.0724323, -0.465
 shape = SubResource("BoxShape3D_0e82a")
 
 [node name="Prompt" type="Label3D" parent="World/environment/GetEggs"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9484673, 1.6738546, 5.9357843)
+transform = Transform3D(-0.9941604, 0, -0.107912496, 0, 1, 0, 0.107912496, 0, -0.9941604, -4.7972355, 1.7013841, 5.9357843)
+modulate = Color(0.22723183, 0.53280044, 0.69686294, 1)
+outline_modulate = Color(0.16470589, 0.41960785, 0.5529412, 1)
 text = "E"
+font = ExtResource("5_0e82a")
+font_size = 42
 
 [node name="GetRice" type="Node3D" parent="World/environment"]
 script = ExtResource("4_2a20n")
@@ -154,8 +175,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0077035427, 1.0724323, -0.4
 shape = SubResource("BoxShape3D_0e82a")
 
 [node name="Prompt" type="Label3D" parent="World/environment/GetRice"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0422399, 1.0893813, 6.0897703)
+transform = Transform3D(-0.9992386, 0, -0.03901567, 0, 1, 0, 0.03901567, 0, -0.9992386, 1.0422399, 1.6810433, 6.34667)
+modulate = Color(0.22723183, 0.53280044, 0.69686294, 1)
+outline_modulate = Color(0.16306561, 0.41808778, 0.5538561, 1)
 text = "E"
+font = ExtResource("5_0e82a")
+font_size = 42
 
 [node name="Player" parent="World" instance=ExtResource("2_c77c4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.3405654)
