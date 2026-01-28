@@ -1,0 +1,211 @@
+[gd_scene load_steps=12 format=3 uid="uid://dbi2a4tphjtll"]
+
+[ext_resource type="FontFile" uid="uid://bsetqd2y0fnfh" path="res://Fonts/Chocolate Donuts.otf" id="1_vyxpl"]
+[ext_resource type="FontFile" uid="uid://bmld7dflfbl5m" path="res://Fonts/Poppin-Regular.ttf" id="2_n8yl6"]
+[ext_resource type="FontFile" uid="uid://c42aj427552up" path="res://Fonts/Vividly-Regular.ttf" id="3_asmro"]
+[ext_resource type="FontFile" uid="uid://bskeu06nps0kw" path="res://Fonts/Start Story.ttf" id="4_5kwr4"]
+[ext_resource type="FontFile" uid="uid://bb35lo3oya030" path="res://Fonts/Cutewritten-Regular.ttf" id="5_vb0ah"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5w1wy"]
+bg_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7w1rj"]
+bg_color = Color(0.9843137, 0.73333335, 0.25490198, 1)
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 20.0
+expand_margin_top = 5.0
+expand_margin_right = 20.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3l5kh"]
+bg_color = Color(0.9607843, 0.74509805, 0.52156866, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 20.0
+expand_margin_top = 5.0
+expand_margin_right = 20.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_itqyv"]
+bg_color = Color(0.22723183, 0.53280044, 0.69686294, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 20.0
+expand_margin_top = 5.0
+expand_margin_right = 20.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s8ppi"]
+bg_color = Color(0.9607843, 0.74509805, 0.52156866, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 20.0
+expand_margin_top = 5.0
+expand_margin_right = 20.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3sgvc"]
+
+[node name="EmotionSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 4.0
+offset_right = 8.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.832
+anchor_top = 0.277
+anchor_right = 0.832
+anchor_bottom = 0.277
+offset_left = -101.46399
+offset_top = -121.496
+offset_right = 102.53601
+offset_bottom = 122.004
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5w1wy")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -93.0
+offset_top = -114.5
+offset_right = 93.0
+offset_bottom = 114.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 31
+alignment = 1
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.22723183, 0.53280044, 0.69686294, 1)
+text = "⋆｡‧˚ʚ♡ɞ˚‧｡⋆"
+
+[node name="emotion1" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_stretch_ratio = 0.0
+theme_override_colors/font_color = Color(0.5176471, 0.23921569, 0.14509805, 1)
+theme_override_colors/font_focus_color = Color(0.5176471, 0.23921569, 0.14509805, 1)
+theme_override_colors/font_pressed_color = Color(0.5176471, 0.23921569, 0.14509805, 1)
+theme_override_colors/font_hover_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_7w1rj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3l5kh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_itqyv")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_s8ppi")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3sgvc")
+text = "Emotion Here"
+icon_alignment = 1
+
+[node name="emotion2" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_stretch_ratio = 0.0
+theme_override_colors/font_color = Color(0.5176471, 0.23921569, 0.14509805, 1)
+theme_override_colors/font_focus_color = Color(0.5176471, 0.23921569, 0.14509805, 1)
+theme_override_colors/font_pressed_color = Color(0.5176471, 0.23921569, 0.14509805, 1)
+theme_override_colors/font_hover_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_7w1rj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3l5kh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_itqyv")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_s8ppi")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3sgvc")
+text = "Emotion Here"
+icon_alignment = 1
+
+[node name="emotion3" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_stretch_ratio = 0.0
+theme_override_colors/font_color = Color(0.5176471, 0.23921569, 0.14509805, 1)
+theme_override_colors/font_focus_color = Color(0.5176471, 0.23921569, 0.14509805, 1)
+theme_override_colors/font_pressed_color = Color(0.5176471, 0.23921569, 0.14509805, 1)
+theme_override_colors/font_hover_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_7w1rj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3l5kh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_itqyv")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_s8ppi")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3sgvc")
+text = "Emotion Here"
+icon_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 4.0
+offset_right = 350.0
+offset_bottom = 61.0
+theme_override_fonts/font = ExtResource("1_vyxpl")
+theme_override_font_sizes/font_size = 44
+text = "Test font here"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 87.0
+offset_top = 63.0
+offset_right = 352.0
+offset_bottom = 105.0
+theme_override_fonts/font = ExtResource("2_n8yl6")
+theme_override_font_sizes/font_size = 34
+text = "Test font here"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 105.0
+offset_right = 351.0
+offset_bottom = 147.0
+theme_override_fonts/font = ExtResource("3_asmro")
+theme_override_font_sizes/font_size = 49
+text = "Test font here"
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 148.0
+offset_right = 351.0
+offset_bottom = 190.0
+theme_override_fonts/font = ExtResource("4_5kwr4")
+theme_override_font_sizes/font_size = 36
+text = "Test font here"
+
+[node name="Label5" type="Label" parent="."]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 200.0
+offset_right = 349.0
+offset_bottom = 242.0
+theme_override_fonts/font = ExtResource("5_vb0ah")
+theme_override_font_sizes/font_size = 46
+text = "Test font here"
