@@ -1,145 +1,61 @@
-[gd_scene load_steps=19 format=3 uid="uid://bmw5q3hto54x5"]
+[gd_scene load_steps=26 format=3 uid="uid://bmw5q3hto54x5"]
 
 [ext_resource type="Script" uid="uid://dvrrsl3m5w25p" path="res://Scripts/main_menu.gd" id="1_8l4an"]
+[ext_resource type="FontFile" uid="uid://c42aj427552up" path="res://Fonts/Vividly-Regular.ttf" id="2_5c2t2"]
 [ext_resource type="Script" uid="uid://cnhpx34br3d0j" path="res://Scenes/options_ui.gd" id="2_8l4an"]
-[ext_resource type="Texture2D" uid="uid://bf0fp5wkkd33p" path="res://Images/title_test01.png" id="2_vmg2h"]
+[ext_resource type="FontFile" uid="uid://bskeu06nps0kw" path="res://Fonts/Start Story.ttf" id="3_bawyk"]
 [ext_resource type="Script" uid="uid://ddkganw2c3ne" path="res://Scenes/music_manager.gd" id="4_emot1"]
 [ext_resource type="Script" uid="uid://b4cb3c8a2ie74" path="res://Scenes/sound_manager.gd" id="4_n15yj"]
+[ext_resource type="Texture2D" uid="uid://dqb1yyj2u8vya" path="res://Images/menuscreen2wip.png" id="4_qfyqv"]
 [ext_resource type="AudioStream" uid="uid://sc1rh6ov8y1t" path="res://Assets/Sounds/PLACEHOLDER.mp3" id="5_i5sur"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_opfnp"]
-texture = ExtResource("2_vmg2h")
-modulate_color = Color(0.9607843, 0.74509805, 0.52156866, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pie25"]
+bg_color = Color(0.22723183, 0.53280044, 0.69686294, 1)
 
-[sub_resource type="FontFile" id="FontFile_cp0ys"]
-cache/0/30/0/ascent = 0.0
-cache/0/30/0/descent = 0.0
-cache/0/30/0/underline_position = 0.0
-cache/0/30/0/underline_thickness = 0.0
-cache/0/30/0/scale = 1.0
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/5/0/ascent = 0.0
-cache/0/5/0/descent = 0.0
-cache/0/5/0/underline_position = 0.0
-cache/0/5/0/underline_thickness = 0.0
-cache/0/5/0/scale = 1.0
-cache/0/1/0/ascent = 0.0
-cache/0/1/0/descent = 0.0
-cache/0/1/0/underline_position = 0.0
-cache/0/1/0/underline_thickness = 0.0
-cache/0/1/0/scale = 1.0
-cache/0/10/0/ascent = 0.0
-cache/0/10/0/descent = 0.0
-cache/0/10/0/underline_position = 0.0
-cache/0/10/0/underline_thickness = 0.0
-cache/0/10/0/scale = 1.0
-cache/0/15/0/ascent = 0.0
-cache/0/15/0/descent = 0.0
-cache/0/15/0/underline_position = 0.0
-cache/0/15/0/underline_thickness = 0.0
-cache/0/15/0/scale = 1.0
-cache/0/20/0/ascent = 0.0
-cache/0/20/0/descent = 0.0
-cache/0/20/0/underline_position = 0.0
-cache/0/20/0/underline_thickness = 0.0
-cache/0/20/0/scale = 1.0
-cache/0/25/0/ascent = 0.0
-cache/0/25/0/descent = 0.0
-cache/0/25/0/underline_position = 0.0
-cache/0/25/0/underline_thickness = 0.0
-cache/0/25/0/scale = 1.0
-cache/0/35/0/ascent = 0.0
-cache/0/35/0/descent = 0.0
-cache/0/35/0/underline_position = 0.0
-cache/0/35/0/underline_thickness = 0.0
-cache/0/35/0/scale = 1.0
-cache/0/40/0/ascent = 0.0
-cache/0/40/0/descent = 0.0
-cache/0/40/0/underline_position = 0.0
-cache/0/40/0/underline_thickness = 0.0
-cache/0/40/0/scale = 1.0
-cache/0/45/0/ascent = 0.0
-cache/0/45/0/descent = 0.0
-cache/0/45/0/underline_position = 0.0
-cache/0/45/0/underline_thickness = 0.0
-cache/0/45/0/scale = 1.0
-cache/0/50/0/ascent = 0.0
-cache/0/50/0/descent = 0.0
-cache/0/50/0/underline_position = 0.0
-cache/0/50/0/underline_thickness = 0.0
-cache/0/50/0/scale = 1.0
-cache/0/55/0/ascent = 0.0
-cache/0/55/0/descent = 0.0
-cache/0/55/0/underline_position = 0.0
-cache/0/55/0/underline_thickness = 0.0
-cache/0/55/0/scale = 1.0
-cache/0/60/0/ascent = 0.0
-cache/0/60/0/descent = 0.0
-cache/0/60/0/underline_position = 0.0
-cache/0/60/0/underline_thickness = 0.0
-cache/0/60/0/scale = 1.0
-cache/0/65/0/ascent = 0.0
-cache/0/65/0/descent = 0.0
-cache/0/65/0/underline_position = 0.0
-cache/0/65/0/underline_thickness = 0.0
-cache/0/65/0/scale = 1.0
-cache/0/70/0/ascent = 0.0
-cache/0/70/0/descent = 0.0
-cache/0/70/0/underline_position = 0.0
-cache/0/70/0/underline_thickness = 0.0
-cache/0/70/0/scale = 1.0
-cache/0/75/0/ascent = 0.0
-cache/0/75/0/descent = 0.0
-cache/0/75/0/underline_position = 0.0
-cache/0/75/0/underline_thickness = 0.0
-cache/0/75/0/scale = 1.0
-cache/0/80/0/ascent = 0.0
-cache/0/80/0/descent = 0.0
-cache/0/80/0/underline_position = 0.0
-cache/0/80/0/underline_thickness = 0.0
-cache/0/80/0/scale = 1.0
-cache/0/85/0/ascent = 0.0
-cache/0/85/0/descent = 0.0
-cache/0/85/0/underline_position = 0.0
-cache/0/85/0/underline_thickness = 0.0
-cache/0/85/0/scale = 1.0
-cache/0/90/0/ascent = 0.0
-cache/0/90/0/descent = 0.0
-cache/0/90/0/underline_position = 0.0
-cache/0/90/0/underline_thickness = 0.0
-cache/0/90/0/scale = 1.0
-cache/0/95/0/ascent = 0.0
-cache/0/95/0/descent = 0.0
-cache/0/95/0/underline_position = 0.0
-cache/0/95/0/underline_thickness = 0.0
-cache/0/95/0/scale = 1.0
-cache/0/100/0/ascent = 0.0
-cache/0/100/0/descent = 0.0
-cache/0/100/0/underline_position = 0.0
-cache/0/100/0/underline_thickness = 0.0
-cache/0/100/0/scale = 1.0
-cache/0/105/0/ascent = 0.0
-cache/0/105/0/descent = 0.0
-cache/0/105/0/underline_position = 0.0
-cache/0/105/0/underline_thickness = 0.0
-cache/0/105/0/scale = 1.0
-cache/0/110/0/ascent = 0.0
-cache/0/110/0/descent = 0.0
-cache/0/110/0/underline_position = 0.0
-cache/0/110/0/underline_thickness = 0.0
-cache/0/110/0/scale = 1.0
-cache/0/115/0/ascent = 0.0
-cache/0/115/0/descent = 0.0
-cache/0/115/0/underline_position = 0.0
-cache/0/115/0/underline_thickness = 0.0
-cache/0/115/0/scale = 1.0
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2jiiu"]
+bg_color = Color(0.5176471, 0.23921569, 0.14509805, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5c2t2"]
+bg_color = Color(0.5176471, 0.23921569, 0.14509805, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bawyk"]
+bg_color = Color(0.5176471, 0.23921569, 0.14509805, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qfyqv"]
+bg_color = Color(0.5176471, 0.23921569, 0.14509805, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pie25"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_opfnp"]
+texture = ExtResource("4_qfyqv")
+modulate_color = Color(0.99332446, 0.9481452, 0.9041213, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yhxw7"]
-bg_color = Color(0.5176471, 0.23921569, 0.14509805, 1)
+bg_color = Color(0.22723183, 0.53280044, 0.69686294, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
@@ -151,7 +67,7 @@ shadow_size = 10
 shadow_offset = Vector2(4.835, 5.605)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_trj04"]
-bg_color = Color(0.5176471, 0.23921569, 0.14509805, 1)
+bg_color = Color(0.22723183, 0.53280044, 0.69686294, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
@@ -244,6 +160,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pie25")
 script = ExtResource("2_8l4an")
 soundEffectsButton = NodePath("Content/SoundEffectsButton")
 musicButton = NodePath("Content/MusicButton")
@@ -251,37 +168,79 @@ closeButton = NodePath("Content/CloseButton")
 
 [node name="Content" type="VBoxContainer" parent="OptionsUI"]
 layout_mode = 1
-anchors_preset = 13
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -201.0
-offset_top = 163.0
-offset_right = 199.0
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -116.5
+offset_right = 150.0
+offset_bottom = 116.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 46
 
 [node name="OptionsText" type="Label" parent="OptionsUI/Content"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 61
+theme_override_colors/font_color = Color(0.9843137, 0.73333335, 0.25490198, 1)
+theme_override_colors/font_shadow_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
+theme_override_constants/shadow_offset_x = -4
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = -205
+theme_override_fonts/font = ExtResource("2_5c2t2")
+theme_override_font_sizes/font_size = 76
 text = "Options"
 horizontal_alignment = 1
 uppercase = true
 
 [node name="SoundEffectsButton" type="Button" parent="OptionsUI/Content"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
+theme_override_colors/font_focus_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
+theme_override_colors/font_pressed_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
+theme_override_colors/font_hover_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
+theme_override_fonts/font = ExtResource("3_bawyk")
 theme_override_font_sizes/font_size = 29
+theme_override_styles/normal = SubResource("StyleBoxFlat_2jiiu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5c2t2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bawyk")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_qfyqv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pie25")
 text = "Sound Effects: 5"
 
 [node name="MusicButton" type="Button" parent="OptionsUI/Content"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
+theme_override_colors/font_focus_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
+theme_override_colors/font_pressed_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
+theme_override_colors/font_hover_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
+theme_override_fonts/font = ExtResource("3_bawyk")
 theme_override_font_sizes/font_size = 29
+theme_override_styles/normal = SubResource("StyleBoxFlat_2jiiu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5c2t2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bawyk")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_qfyqv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pie25")
 text = "Music: 5"
 
 [node name="CloseButton" type="Button" parent="OptionsUI/Content"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
+theme_override_colors/font_focus_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
+theme_override_colors/font_pressed_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
+theme_override_colors/font_hover_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
+theme_override_fonts/font = ExtResource("3_bawyk")
 theme_override_font_sizes/font_size = 29
-text = "CLOSE"
+theme_override_styles/normal = SubResource("StyleBoxFlat_2jiiu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5c2t2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bawyk")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_qfyqv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pie25")
+text = "Back"
 
 [node name="MainMenuUI" type="Panel" parent="." node_paths=PackedStringArray("playButton", "optionsButton", "quitButton")]
 layout_mode = 1
@@ -319,7 +278,7 @@ theme_override_colors/font_focus_color = Color(0.99215686, 0.95686275, 0.7215686
 theme_override_colors/font_pressed_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
 theme_override_colors/font_hover_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
-theme_override_fonts/font = SubResource("FontFile_cp0ys")
+theme_override_fonts/font = ExtResource("3_bawyk")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_yhxw7")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_trj04")
@@ -335,7 +294,7 @@ theme_override_colors/font_focus_color = Color(0.99215686, 0.95686275, 0.7215686
 theme_override_colors/font_pressed_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
 theme_override_colors/font_hover_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
-theme_override_fonts/font = SubResource("FontFile_cp0ys")
+theme_override_fonts/font = ExtResource("3_bawyk")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_yhxw7")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_t1dhk")
@@ -351,7 +310,7 @@ theme_override_colors/font_focus_color = Color(0.99215686, 0.95686275, 0.7215686
 theme_override_colors/font_pressed_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
 theme_override_colors/font_hover_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
-theme_override_fonts/font = SubResource("FontFile_cp0ys")
+theme_override_fonts/font = ExtResource("3_bawyk")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_yhxw7")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_8dnnj")
