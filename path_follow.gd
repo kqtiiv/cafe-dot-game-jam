@@ -5,8 +5,8 @@ signal npc_sat_down
 @export var speed: float = 2.0
 @export var sit_animation_name: String = "Sit"
 
-@onready var anim_tree = $character_rigged/AnimationTree
-@onready var anim_player = $character_rigged/AnimationPlayer
+@onready var anim_tree = $armature_004/AnimationTree
+@onready var anim_player = $armature_004/AnimationPlayer
 
 var has_sat_down: bool = false
 

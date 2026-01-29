@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://ejtf25hfn0ny"]
+[gd_scene load_steps=6 format=3 uid="uid://ejtf25hfn0ny"]
 
 [ext_resource type="Script" uid="uid://daxcvu8djc60i" path="res://path_follow.gd" id="1_rwv02"]
-[ext_resource type="PackedScene" uid="uid://ue7r74512xiy" path="res://Assets/3D/Sprites/character_rigged.tscn" id="2_tqmci"]
+[ext_resource type="PackedScene" uid="uid://bc1g6vg2n0lja" path="res://Scenes/customer.tscn" id="2_vchtg"]
 [ext_resource type="Script" uid="uid://ci8q2i4a2343w" path="res://Scenes/interact.gd" id="3_tqmci"]
+[ext_resource type="FontFile" uid="uid://bskeu06nps0kw" path="res://Fonts/Start Story.ttf" id="4_lk7k8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vchtg"]
 size = Vector3(1.2569461, 1.7747345, 0.9096165)
@@ -11,7 +12,7 @@ size = Vector3(1.2569461, 1.7747345, 0.9096165)
 loop = false
 script = ExtResource("1_rwv02")
 
-[node name="character_rigged" parent="." instance=ExtResource("2_tqmci")]
+[node name="armature_004" parent="." instance=ExtResource("2_vchtg")]
 
 [node name="Interact" type="Node3D" parent="." node_paths=PackedStringArray("npc_controller")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27406955, 0, -6.239343)
@@ -19,15 +20,16 @@ script = ExtResource("3_tqmci")
 npc_controller = NodePath("..")
 
 [node name="InteractArea" type="Area3D" parent="Interact"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28274512, -0.05114758, 6.4616194)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28274512, -0.05114758, 6.9195256)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interact/InteractArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.017643452, 0.91736484, -0.18325806)
 shape = SubResource("BoxShape3D_vchtg")
 
 [node name="Prompt" type="Label3D" parent="Interact"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23136264, 1.7805512, 6.3448925)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23136264, 1.7805512, 6.811622)
 text = "E"
+font = ExtResource("4_lk7k8")
 
 [connection signal="body_entered" from="Interact/InteractArea" to="Interact" method="_on_interact_area_body_entered"]
 [connection signal="body_exited" from="Interact/InteractArea" to="Interact" method="_on_interact_area_body_exited"]
