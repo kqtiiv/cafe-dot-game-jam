@@ -3,9 +3,8 @@ extends PathFollow3D
 signal npc_sat_down 
 
 @export var speed: float = 2.0
-@export var sit_animation_name: String = "Sit"
+@export var sit_animation_name: String = "sitting-Armature_002"
 
-@onready var anim_tree = $armature_004/AnimationTree
 @onready var anim_player = $armature_004/AnimationPlayer
 
 var has_sat_down: bool = false
@@ -13,7 +12,7 @@ var has_sat_down: bool = false
 func _process(delta):
 	if progress_ratio < 1.0:
 		progress += speed * delta
-		anim_tree.set("parameters/BlendSpace1D/blend_position", 1.0)
+		anim_player.play("customerwalk")
 	else:
 		if not has_sat_down:
 			perform_sit_action()
@@ -21,9 +20,6 @@ func _process(delta):
 func perform_sit_action():
 	has_sat_down = true
 	print("Sitting down.")
-	
-	if anim_tree:
-		anim_tree.active = false
 		
 	if anim_player:
 		anim_player.play(sit_animation_name, 0.5)

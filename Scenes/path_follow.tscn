@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://ejtf25hfn0ny"]
 
 [ext_resource type="Script" uid="uid://daxcvu8djc60i" path="res://path_follow.gd" id="1_rwv02"]
-[ext_resource type="PackedScene" uid="uid://bc1g6vg2n0lja" path="res://Scenes/customer.tscn" id="2_vchtg"]
+[ext_resource type="PackedScene" uid="uid://cb3a34aedcrmi" path="res://Scenes/customer.tscn" id="2_vchtg"]
 [ext_resource type="Script" uid="uid://ci8q2i4a2343w" path="res://Scenes/interact.gd" id="3_tqmci"]
 [ext_resource type="FontFile" uid="uid://bskeu06nps0kw" path="res://Fonts/Start Story.ttf" id="4_lk7k8"]
 
@@ -15,7 +15,7 @@ script = ExtResource("1_rwv02")
 [node name="armature_004" parent="." instance=ExtResource("2_vchtg")]
 
 [node name="Interact" type="Node3D" parent="." node_paths=PackedStringArray("npc_controller")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27406955, 0, -6.239343)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27406955, 0, -6.942713)
 script = ExtResource("3_tqmci")
 npc_controller = NodePath("..")
 
