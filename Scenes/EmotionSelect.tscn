@@ -91,9 +91,9 @@ size_flags_vertical = 8
 [node name="bgwippic" type="Panel" parent="."]
 layout_mode = 0
 offset_left = -576.0
-offset_top = -344.0
+offset_top = -355.0
 offset_right = 579.0
-offset_bottom = 345.0
+offset_bottom = 361.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_s8ppi")
 
 [node name="EmotionSelect" type="Panel" parent="."]

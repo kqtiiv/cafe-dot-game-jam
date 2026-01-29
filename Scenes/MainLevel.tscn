@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://3i6i7utpdhxv"]
+[gd_scene load_steps=16 format=3 uid="uid://3i6i7utpdhxv"]
 
 [ext_resource type="PackedScene" uid="uid://dhhsekj4kfdfx" path="res://Assets/3D/World/environment.glb" id="1_8vsrk"]
 [ext_resource type="Script" uid="uid://c8r0w8ay0pbyh" path="res://Scenes/world.gd" id="1_o15vh"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ejtf25hfn0ny" path="res://Scenes/path_follow.tscn" id="2_ymtjv"]
 [ext_resource type="Script" uid="uid://dtptta1hasb5i" path="res://Scenes/chopping-board.gd" id="4_2a20n"]
 [ext_resource type="FontFile" uid="uid://bskeu06nps0kw" path="res://Fonts/Start Story.ttf" id="5_0e82a"]
+[ext_resource type="AudioStream" uid="uid://ko3qh8jpk62o" path="res://Assets/Sounds/dingdong.mp3" id="7_s1b4b"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o15vh"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -32,7 +33,7 @@ size = Vector3(0.50450134, 2.0848694, 1.761383)
 
 [sub_resource type="Curve3D" id="Curve3D_ymtjv"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -5.5549793, 0.034504518, -0.18670654, 0, 0, 0, 0, 0, 0, -2.0088584, 0.033608466, 0.24658585, 0, 0, 0, 0, 0, 0, 0.842839, 0.28530383, 1.167551, 0, 0, 0, 0, 0, 0, 3.2375426, 0.77610636, 1.2949333),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -6.721384, 0.034504518, -0.18670654, 0, 0, 0, 0, 0, 0, -2.0088584, 0.033608466, 0.24658585, 0, 0, 0, 0, 0, 0, 0.842839, 0.28530383, 1.167551, 0, 0, 0, 0, 0, 0, 3.2375426, 0.77610636, 1.2949333),
 "tilts": PackedFloat32Array(0, 0, 0, 0)
 }
 point_count = 4
@@ -42,6 +43,14 @@ point_count = 4
 [node name="World" type="Node3D" parent="."]
 script = ExtResource("1_o15vh")
 npc_scene = ExtResource("2_ymtjv")
+
+[node name="doorbell" type="AudioStreamPlayer3D" parent="World"]
+transform = Transform3D(-0.12571995, 0.43775925, -0.89025915, 0.061211813, 0.89909226, 0.4334585, 0.99017555, 0, -0.13982986, -5.65577, 1.9343231, -6.2541456)
+stream = ExtResource("7_s1b4b")
+volume_db = -29.176
+max_db = 2.647
+emission_angle_enabled = true
+emission_angle_degrees = 65.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="World"]
 environment = SubResource("Environment_ymtjv")
