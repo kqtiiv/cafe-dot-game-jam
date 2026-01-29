@@ -4,3 +4,6 @@
 .vs/cafe-dot-game-jam/v17/.suo
 .vs/slnx.sqlite
 .vs/VSWorkspaceState.json
+
+#Godot Import Files
+Assets/**/*.import
