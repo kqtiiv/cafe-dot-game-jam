@@ -1,9 +1,33 @@
-[gd_scene load_steps=3 format=3 uid="uid://bof18xigyvbft"]
+[gd_scene load_steps=7 format=3 uid="uid://bof18xigyvbft"]
 
 [ext_resource type="PackedScene" uid="uid://3i6i7utpdhxv" path="res://Scenes/MainLevel.tscn" id="1_at2u3"]
-[ext_resource type="PackedScene" uid="uid://ejtf25hfn0ny" path="res://Scenes/path_follow.tscn" id="2_ekhe2"]
+[ext_resource type="Texture2D" uid="uid://crorg07x0qirt" path="res://Assets/3D/World/wallpaper.png" id="2_ekhe2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ekhe2"]
+albedo_texture = ExtResource("2_ekhe2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4wdbe"]
+albedo_texture = ExtResource("2_ekhe2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lefxv"]
+albedo_texture = ExtResource("2_ekhe2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uq1df"]
+albedo_texture = ExtResource("2_ekhe2")
 
 [node name="MainWorld" instance=ExtResource("1_at2u3")]
 
-[node name="World" parent="." index="0"]
-npc_scene = ExtResource("2_ekhe2")
+[node name="Wall" parent="World" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.889232, 3.0328653, -1.561409)
+size = Vector3(0.12, 7.069, 13.639)
+material = SubResource("StandardMaterial3D_ekhe2")
+
+[node name="Wall2" parent="World" index="3"]
+material = SubResource("StandardMaterial3D_4wdbe")
+
+[node name="Wall3" parent="World" index="4"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.15683746, 3.0348673, 5.235549)
+material = SubResource("StandardMaterial3D_lefxv")
+
+[node name="Wall4" parent="World" index="5"]
+material = SubResource("StandardMaterial3D_uq1df")
