@@ -1,6 +1,8 @@
-[gd_scene load_steps=26 format=3 uid="uid://megv2xypt8uj"]
+[gd_scene load_steps=28 format=3 uid="uid://megv2xypt8uj"]
 
 [ext_resource type="Script" uid="uid://cof5iwydqoar2" path="res://Scripts/pause_menu.gd" id="1_lj4oq"]
+[ext_resource type="FontFile" uid="uid://bskeu06nps0kw" path="res://Fonts/Start Story.ttf" id="2_qwhev"]
+[ext_resource type="AudioStream" uid="uid://c8lib81jxdfps" path="res://Assets/Sounds/click.mp3" id="3_5w4ur"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lj4oq"]
 bg_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
@@ -263,6 +265,7 @@ theme_override_colors/font_focus_color = Color(0.5176471, 0.23921569, 0.14509805
 theme_override_colors/font_pressed_color = Color(0.5176471, 0.23921569, 0.14509805, 1)
 theme_override_colors/font_hover_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
+theme_override_fonts/font = ExtResource("2_qwhev")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_qwhev")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_yxrls")
@@ -278,6 +281,7 @@ theme_override_colors/font_focus_color = Color(0.5176471, 0.23921569, 0.14509805
 theme_override_colors/font_pressed_color = Color(0.5176471, 0.23921569, 0.14509805, 1)
 theme_override_colors/font_hover_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
+theme_override_fonts/font = ExtResource("2_qwhev")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_5w4ur")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_425uk")
@@ -293,6 +297,7 @@ theme_override_colors/font_focus_color = Color(0.5176471, 0.23921569, 0.14509805
 theme_override_colors/font_pressed_color = Color(0.5176471, 0.23921569, 0.14509805, 1)
 theme_override_colors/font_hover_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
+theme_override_fonts/font = ExtResource("2_qwhev")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_ey1tb")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_h171x")
@@ -308,13 +313,19 @@ theme_override_colors/font_focus_color = Color(0.5176471, 0.23921569, 0.14509805
 theme_override_colors/font_pressed_color = Color(0.5176471, 0.23921569, 0.14509805, 1)
 theme_override_colors/font_hover_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
-theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("2_qwhev")
+theme_override_font_sizes/font_size = 21
 theme_override_styles/normal = SubResource("StyleBoxFlat_siy43")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_hw4na")
 theme_override_styles/hover = SubResource("StyleBoxFlat_epvri")
 theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_mexcr")
 theme_override_styles/focus = SubResource("StyleBoxFlat_8kogi")
 text = "Quit"
+
+[node name="button_click" type="AudioStreamPlayer" parent="Panel/VBoxContainer"]
+stream = ExtResource("3_5w4ur")
+volume_db = -8.864
+pitch_scale = 1.66
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bmw5q3hto54x5"]
+[gd_scene load_steps=27 format=3 uid="uid://bmw5q3hto54x5"]
 
 [ext_resource type="Script" uid="uid://dvrrsl3m5w25p" path="res://Scripts/main_menu.gd" id="1_8l4an"]
 [ext_resource type="FontFile" uid="uid://c42aj427552up" path="res://Fonts/Vividly-Regular.ttf" id="2_5c2t2"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://b4cb3c8a2ie74" path="res://Scenes/sound_manager.gd" id="4_n15yj"]
 [ext_resource type="Texture2D" uid="uid://dqb1yyj2u8vya" path="res://Images/menuscreen2wip.png" id="4_qfyqv"]
 [ext_resource type="AudioStream" uid="uid://sc1rh6ov8y1t" path="res://Assets/Sounds/PLACEHOLDER.mp3" id="5_i5sur"]
+[ext_resource type="AudioStream" uid="uid://c8lib81jxdfps" path="res://Assets/Sounds/click.mp3" id="6_bawyk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pie25"]
 bg_color = Color(0.22723183, 0.53280044, 0.69686294, 1)
@@ -67,7 +68,7 @@ shadow_size = 10
 shadow_offset = Vector2(4.835, 5.605)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_trj04"]
-bg_color = Color(0.22723183, 0.53280044, 0.69686294, 1)
+bg_color = Color(0.5176471, 0.23921569, 0.14509805, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
@@ -242,6 +243,11 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_qfyqv")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_pie25")
 text = "Back"
 
+[node name="button_click" type="AudioStreamPlayer" parent="OptionsUI/Content"]
+stream = ExtResource("6_bawyk")
+volume_db = -5.318
+pitch_scale = 1.88
+
 [node name="MainMenuUI" type="Panel" parent="." node_paths=PackedStringArray("playButton", "optionsButton", "quitButton")]
 layout_mode = 1
 anchors_preset = 15
@@ -317,6 +323,11 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_8dnnj")
 theme_override_styles/hover = SubResource("StyleBoxFlat_m3bi6")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_wyh8j")
 text = "Exit"
+
+[node name="button_click" type="AudioStreamPlayer" parent="MainMenuUI/Content"]
+stream = ExtResource("6_bawyk")
+volume_db = -5.318
+pitch_scale = 1.88
 
 [node name="MusicManager" type="Node3D" parent="." node_paths=PackedStringArray("audioStreamPlayer")]
 script = ExtResource("4_emot1")

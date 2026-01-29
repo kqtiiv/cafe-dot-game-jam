@@ -8,6 +8,7 @@ static var Instance: OptionsUI:
 @export var soundEffectsButton: Button
 @export var musicButton: Button
 @export var closeButton: Button
+@onready var audio = $Content/button_click
 
 var _onCloseButtonAction: Callable
 
@@ -17,15 +18,18 @@ func _init() -> void:
 	_instance = self
 
 func _ready() -> void:
-	soundEffectsButton.pressed.connect(func(): 
+	soundEffectsButton.pressed.connect(func():
+		audio.play()
 		SoundManager.Instance.ChangeVolume()
 		UpdateVisual()
 	)
 	musicButton.pressed.connect(func(): 
+		audio.play()
 		MusicManager.Instance.ChangeVolume()
 		UpdateVisual()
 	)
 	closeButton.pressed.connect(func(): 
+		audio.play()
 		hide()
 		_onCloseButtonAction.call()
 	)
