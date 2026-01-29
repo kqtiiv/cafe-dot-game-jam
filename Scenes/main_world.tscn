@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://3i6i7utpdhxv" path="res://Scenes/MainLevel.tscn" id="1_at2u3"]
 [ext_resource type="Texture2D" uid="uid://crorg07x0qirt" path="res://Assets/3D/World/wallpaper.png" id="2_ekhe2"]
 [ext_resource type="Texture2D" uid="uid://d12660gr4jidx" path="res://Assets/3D/World/floor.png" id="3_4wdbe"]
-[ext_resource type="PackedScene" uid="uid://dcxbbt61cf6xw" path="res://Assets/3D/World/window.glb" id="4_lefxv"]
+[ext_resource type="PackedScene" uid="uid://brn4rs1o2w6wi" path="res://Assets/3D/World/window.glb" id="4_lefxv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ekhe2"]
 albedo_texture = ExtResource("2_ekhe2")
@@ -24,22 +24,22 @@ uv1_triplanar = true
 
 [node name="MainWorld" instance=ExtResource("1_at2u3")]
 
-[node name="Wall" parent="World" index="2"]
+[node name="Wall" parent="World" index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.889232, 3.0328653, -1.561409)
 size = Vector3(0.12, 7.069, 13.639)
 material = SubResource("StandardMaterial3D_ekhe2")
 
-[node name="Wall2" parent="World" index="3"]
+[node name="Wall2" parent="World" index="4"]
 material = SubResource("StandardMaterial3D_4wdbe")
 
-[node name="Wall3" parent="World" index="4"]
+[node name="Wall3" parent="World" index="5"]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.15704072, 3.0350704, 5.2355194)
 material = SubResource("StandardMaterial3D_lefxv")
 
-[node name="Wall4" parent="World" index="5"]
+[node name="Wall4" parent="World" index="6"]
 material = SubResource("StandardMaterial3D_uq1df")
 
-[node name="Ground" parent="World" index="6"]
+[node name="Ground" parent="World" index="7"]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0.69975877, 0, -1.571)
 surface_material_override/0 = SubResource("StandardMaterial3D_1tp12")
 
