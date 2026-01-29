@@ -1,34 +1,40 @@
 extends Node3D
-class_name SoundManager
 
 const SAVE_FILE_SOUND_EFFECTS_VOLUME := "user://SoundEffectsVolume.save"
 
-static var _instance: SoundManager = null
-static var Instance: SoundManager:
-	get: return _instance
+const BUS_NAME := "SFX" 
 
 var _volume := 1.0
+var _bus_index := 0
 
-func _init():
-	if (_instance):
-		push_error("More than one SoundManager instance")
-	_instance = self
+func _ready() -> void:
+	_bus_index = AudioServer.get_bus_index(BUS_NAME)
 	
-	if (FileAccess.file_exists(SAVE_FILE_SOUND_EFFECTS_VOLUME)):
+	if _bus_index == -1:
+		push_error("SoundManager: Audio Bus '" + BUS_NAME + "' not found! Defaulting to Master.")
+		_bus_index = AudioServer.get_bus_index("Master")
+
+	if FileAccess.file_exists(SAVE_FILE_SOUND_EFFECTS_VOLUME):
 		var saveFile = FileAccess.open(SAVE_FILE_SOUND_EFFECTS_VOLUME, FileAccess.READ)
 		_volume = saveFile.get_double()
-
-func _exit_tree() -> void:
-	_instance = null
+	
+	_update_bus_volume()
 
 func ChangeVolume() -> void:
 	_volume += 0.1
-	if (_volume > 1.0):
+	if _volume > 1.0:
 		_volume = 0.0
 		
+	_update_bus_volume()
+	
+	# Save the new setting
 	var saveFile = FileAccess.open(SAVE_FILE_SOUND_EFFECTS_VOLUME, FileAccess.WRITE)
 	saveFile.store_double(_volume)
-	
 
 func GetVolume() -> float:
 	return _volume
+
+func _update_bus_volume() -> void:
+	AudioServer.set_bus_volume_db(_bus_index, linear_to_db(_volume))
+	
+	AudioServer.set_bus_mute(_bus_index, _volume == 0.0)
