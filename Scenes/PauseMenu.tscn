@@ -326,6 +326,7 @@ text = "Quit"
 stream = ExtResource("3_5w4ur")
 volume_db = -8.864
 pitch_scale = 1.66
+bus = &"SFX"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
