@@ -1,0 +1,179 @@
+[gd_scene load_steps=8 format=3 uid="uid://ditqvsb6c1m1x"]
+
+[ext_resource type="Script" uid="uid://yjli7eomq61e" path="res://Scripts/results_screen.gd" id="1_jxlxw"]
+[ext_resource type="Texture2D" uid="uid://5wtn2apa843m" path="res://Images/endgame_bg.png" id="2_gnyy0"]
+[ext_resource type="FontFile" uid="uid://bskeu06nps0kw" path="res://Fonts/Start Story.ttf" id="3_ykr4e"]
+[ext_resource type="StyleBox" uid="uid://b8ab2apfhfhjl" path="res://endgame_buttons.tres" id="4_gnyy0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v8ikh"]
+texture = ExtResource("2_gnyy0")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vcfm3"]
+bg_color = Color(0.5176471, 0.23921569, 0.14509805, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.6656041, 0.32135826, 0.20543969, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s5hmk"]
+bg_color = Color(0.5176471, 0.23921569, 0.14509805, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.6656041, 0.32135826, 0.20543969, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0.99215686, 0.95686275, 0.72156864, 0)
+shadow_size = 8
+
+[node name="Results" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jxlxw")
+
+[node name="background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -45.0
+offset_bottom = 41.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_v8ikh")
+
+[node name="PanelContainer" type="BoxContainer" parent="background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -376.5
+offset_top = 201.0
+offset_right = 376.5
+offset_bottom = 272.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 152
+alignment = 1
+
+[node name="Restart" type="Button" parent="background/PanelContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.22723183, 0.53280044, 0.69686294, 1)
+theme_override_colors/font_focus_color = Color(0.22723183, 0.53280044, 0.69686294, 1)
+theme_override_colors/font_pressed_color = Color(0.22723183, 0.53280044, 0.69686294, 1)
+theme_override_colors/font_hover_color = Color(0.22723183, 0.53280044, 0.69686294, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.22723183, 0.53280044, 0.69686294, 1)
+theme_override_fonts/font = ExtResource("3_ykr4e")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = ExtResource("4_gnyy0")
+theme_override_styles/pressed = ExtResource("4_gnyy0")
+theme_override_styles/hover = ExtResource("4_gnyy0")
+theme_override_styles/hover_pressed = ExtResource("4_gnyy0")
+text = "Restart"
+
+[node name="Credits" type="Button" parent="background/PanelContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.22723183, 0.53280044, 0.69686294, 1)
+theme_override_colors/font_focus_color = Color(0.22723183, 0.53280044, 0.69686294, 1)
+theme_override_colors/font_pressed_color = Color(0.22723183, 0.53280044, 0.69686294, 1)
+theme_override_colors/font_hover_color = Color(0.22723183, 0.53280044, 0.69686294, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.22723183, 0.53280044, 0.69686294, 1)
+theme_override_fonts/font = ExtResource("3_ykr4e")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = ExtResource("4_gnyy0")
+theme_override_styles/pressed = ExtResource("4_gnyy0")
+theme_override_styles/hover = ExtResource("4_gnyy0")
+theme_override_styles/hover_pressed = ExtResource("4_gnyy0")
+text = " Credits "
+
+[node name="Exit" type="Button" parent="background/PanelContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.22723183, 0.53280044, 0.69686294, 1)
+theme_override_colors/font_focus_color = Color(0.22723183, 0.53280044, 0.69686294, 1)
+theme_override_colors/font_pressed_color = Color(0.22723183, 0.53280044, 0.69686294, 1)
+theme_override_colors/font_hover_color = Color(0.22723183, 0.53280044, 0.69686294, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.22723183, 0.53280044, 0.69686294, 1)
+theme_override_fonts/font = ExtResource("3_ykr4e")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = ExtResource("4_gnyy0")
+theme_override_styles/pressed = ExtResource("4_gnyy0")
+theme_override_styles/hover = ExtResource("4_gnyy0")
+theme_override_styles/hover_pressed = ExtResource("4_gnyy0")
+text = "  Exit  "
+
+[node name="storybg" type="Panel" parent="background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -434.5
+offset_top = 81.0
+offset_right = 438.5
+offset_bottom = 172.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vcfm3")
+
+[node name="Panel" type="Panel" parent="background"]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 72.0
+offset_right = 870.0
+offset_bottom = 135.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_s5hmk")
+
+[node name="Label" type="Label" parent="background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -272.5
+offset_top = -276.0
+offset_right = 272.5
+offset_bottom = -248.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
+theme_override_fonts/font = ExtResource("3_ykr4e")
+theme_override_font_sizes/font_size = 22
+text = "lil blurb about how good or bad the player did"
+
+[node name="Label2" type="Label" parent="background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -418.0
+offset_top = 99.0
+offset_right = 412.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
+theme_override_fonts/font = ExtResource("3_ykr4e")
+theme_override_font_sizes/font_size = 20
+text = "story about what happened to the cafe corresponding to the score player got
+hopefully two lines of info for them to read"
+horizontal_alignment = 1

@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://ditqvsb6c1m1x"]
+[gd_scene load_steps=4 format=3 uid="uid://1gnffjbi8fg3"]
 
 [ext_resource type="FontFile" uid="uid://bskeu06nps0kw" path="res://Fonts/Start Story.ttf" id="1_f61vt"]
-[ext_resource type="Script" uid="uid://yjli7eomq61e" path="res://results_screen.gd" id="1_w6f7w"]
+[ext_resource type="Script" path="res://results_screen.gd" id="1_w6f7w"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w6f7w"]
 bg_color = Color(0.22723183, 0.53280044, 0.69686294, 1)
