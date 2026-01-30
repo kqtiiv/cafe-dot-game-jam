@@ -1,7 +1,7 @@
-[gd_scene load_steps=24 format=3 uid="uid://3i6i7utpdhxv"]
+[gd_scene load_steps=25 format=3 uid="uid://3i6i7utpdhxv"]
 
 [ext_resource type="PackedScene" uid="uid://dhhsekj4kfdfx" path="res://Assets/3D/World/environment.glb" id="1_8vsrk"]
-[ext_resource type="Script" uid="uid://c8r0w8ay0pbyh" path="res://Scenes/world.gd" id="1_b2f5p"]
+[ext_resource type="Script" uid="uid://c8r0w8ay0pbyh" path="res://Scripts/world.gd" id="1_b2f5p"]
 [ext_resource type="PackedScene" uid="uid://megv2xypt8uj" path="res://Scenes/PauseMenu.tscn" id="1_r7jfx"]
 [ext_resource type="PackedScene" uid="uid://ejtf25hfn0ny" path="res://Scenes/path_follow.tscn" id="2_7g1pw"]
 [ext_resource type="PackedScene" uid="uid://c005gn3ouf4f0" path="res://Assets/3D/Sprites/armature_004.tscn" id="2_c77c4"]
@@ -9,6 +9,7 @@
 [ext_resource type="FontFile" uid="uid://bskeu06nps0kw" path="res://Fonts/Start Story.ttf" id="5_0e82a"]
 [ext_resource type="Texture2D" uid="uid://d12660gr4jidx" path="res://Assets/3D/World/floor.png" id="5_7g1pw"]
 [ext_resource type="AudioStream" uid="uid://ko3qh8jpk62o" path="res://Assets/Sounds/dingdong.mp3" id="7_s1b4b"]
+[ext_resource type="Script" uid="uid://d0bbviah2ncyb" path="res://Scripts/cooking.gd" id="8_7g1pw"]
 [ext_resource type="PackedScene" uid="uid://bhw7ep2i0u5wa" path="res://Assets/3D/World/omurice recipe page.glb" id="9_snxwr"]
 [ext_resource type="PackedScene" uid="uid://brn4rs1o2w6wi" path="res://Assets/3D/World/window.glb" id="10_o8t5j"]
 
@@ -65,7 +66,7 @@ npc_scene = ExtResource("2_7g1pw")
 [node name="World" type="Node3D" parent="."]
 
 [node name="doorbell" type="AudioStreamPlayer3D" parent="World"]
-transform = Transform3D(-0.12571995, 0.43775925, -0.89025915, 0.061211813, 0.89909226, 0.4334585, 0.99017555, 0, -0.13982986, -5.65577, 1.9343231, -6.2541456)
+transform = Transform3D(-0.12571995, 0.43775925, -0.89025915, 0.061211813, 0.89909226, 0.4334585, 0.99017555, 3.7608143e-09, -0.13982987, -5.65577, 1.5584431, -6.069004)
 stream = ExtResource("7_s1b4b")
 volume_db = -29.176
 max_db = 2.647
@@ -126,16 +127,16 @@ shape = SubResource("ConcavePolygonShape3D_u1ln4")
 [node name="environment" parent="World" instance=ExtResource("1_8vsrk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20322871, -0.00306499, -1.9737546)
 
-[node name="Chopping" type="Node3D" parent="World/environment"]
+[node name="WriteMessage" type="Node3D" parent="World/environment"]
 
-[node name="ChoppingArea" type="Area3D" parent="World/environment/Chopping"]
+[node name="WritingArea" type="Area3D" parent="World/environment/WriteMessage"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28274512, -0.05114758, 6.4616194)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/environment/Chopping/ChoppingArea"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/environment/WriteMessage/WritingArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13387084, 1.0724323, -0.46554852)
 shape = SubResource("BoxShape3D_ki5qo")
 
-[node name="Prompt" type="Label3D" parent="World/environment/Chopping"]
+[node name="Prompt" type="Label3D" parent="World/environment/WriteMessage"]
 transform = Transform3D(-0.99993867, 0, -0.01108256, 0, 1, 0, 0.01108256, 0, -0.99993867, -0.23136264, 1.6627644, 6.3448925)
 modulate = Color(0.22723183, 0.53280044, 0.69686294, 1)
 outline_modulate = Color(0.16470589, 0.41960785, 0.5529412, 1)
@@ -143,24 +144,8 @@ text = "E"
 font = ExtResource("5_0e82a")
 font_size = 42
 
-[node name="Washing" type="Node3D" parent="World/environment"]
-
-[node name="WashingArea" type="Area3D" parent="World/environment/Washing"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5923823, -0.05114758, 6.4616194)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/environment/Washing/WashingArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13387084, 1.0724323, -0.46554852)
-shape = SubResource("BoxShape3D_ki5qo")
-
-[node name="Prompt" type="Label3D" parent="World/environment/Washing"]
-transform = Transform3D(-0.99868286, 0, 0.051307768, 0, 1, 0, -0.051307768, 0, -0.99868286, -1.4919825, 1.6508743, 6.353689)
-modulate = Color(0.22723183, 0.53280044, 0.69686294, 1)
-outline_modulate = Color(0.16470589, 0.41960785, 0.5529412, 1)
-text = "E"
-font = ExtResource("5_0e82a")
-font_size = 42
-
 [node name="Cooking" type="Node3D" parent="World/environment"]
+script = ExtResource("8_7g1pw")
 
 [node name="CookingArea" type="Area3D" parent="World/environment/Cooking"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1669462, -0.05114758, 6.4616194)
@@ -177,33 +162,21 @@ text = "E"
 font = ExtResource("5_0e82a")
 font_size = 42
 
-[node name="GetEggs" type="Node3D" parent="World/environment"]
+[node name="ProgressBar" type="TextureProgressBar" parent="World/environment/Cooking"]
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="EggArea" type="Area3D" parent="World/environment/GetEggs"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.80134, -0.05114758, 6.4616194)
+[node name="CookRice" type="Node3D" parent="World/environment"]
+script = ExtResource("8_7g1pw")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/environment/GetEggs/EggArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13387084, 1.0724323, -0.46554852)
-shape = SubResource("BoxShape3D_ki5qo")
-
-[node name="Prompt" type="Label3D" parent="World/environment/GetEggs"]
-transform = Transform3D(-0.9941604, 0, -0.107912496, 0, 1, 0, 0.107912496, 0, -0.9941604, -4.7972355, 1.7013841, 5.9357843)
-modulate = Color(0.22723183, 0.53280044, 0.69686294, 1)
-outline_modulate = Color(0.16470589, 0.41960785, 0.5529412, 1)
-text = "E"
-font = ExtResource("5_0e82a")
-font_size = 42
-
-[node name="GetRice" type="Node3D" parent="World/environment"]
-
-[node name="RiceArea" type="Area3D" parent="World/environment/GetRice"]
+[node name="RiceArea" type="Area3D" parent="World/environment/CookRice"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0215499, -0.05114758, 6.4616194)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/environment/GetRice/RiceArea"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/environment/CookRice/RiceArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0077035427, 1.0724323, -0.46554852)
 shape = SubResource("BoxShape3D_ki5qo")
 
-[node name="Prompt" type="Label3D" parent="World/environment/GetRice"]
+[node name="Prompt" type="Label3D" parent="World/environment/CookRice"]
 transform = Transform3D(-0.9992386, 0, -0.03901567, 0, 1, 0, 0.03901567, 0, -0.9992386, 1.0422399, 1.6810433, 6.34667)
 modulate = Color(0.22723183, 0.53280044, 0.69686294, 1)
 outline_modulate = Color(0.16306561, 0.41808778, 0.5538561, 1)
@@ -211,7 +184,11 @@ text = "E"
 font = ExtResource("5_0e82a")
 font_size = 42
 
-[node name="Player" parent="World" instance=ExtResource("2_c77c4")]
+[node name="ProgressBar" type="TextureProgressBar" parent="World/environment/CookRice"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Player" parent="World" groups=["Player"] instance=ExtResource("2_c77c4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.3405654)
 
 [node name="window" parent="World" instance=ExtResource("10_o8t5j")]
@@ -238,13 +215,9 @@ curve = SubResource("Curve3D_txgp6")
 
 [node name="PauseMenu" parent="." instance=ExtResource("1_r7jfx")]
 
-[connection signal="body_entered" from="World/environment/Chopping/ChoppingArea" to="World/environment/Chopping" method="_on_chopping_area_body_entered"]
-[connection signal="body_exited" from="World/environment/Chopping/ChoppingArea" to="World/environment/Chopping" method="_on_chopping_area_body_exited"]
-[connection signal="body_entered" from="World/environment/Washing/WashingArea" to="World/environment/Washing" method="_on_chopping_area_body_entered"]
-[connection signal="body_exited" from="World/environment/Washing/WashingArea" to="World/environment/Washing" method="_on_chopping_area_body_exited"]
-[connection signal="body_entered" from="World/environment/Cooking/CookingArea" to="World/environment/Cooking" method="_on_chopping_area_body_entered"]
-[connection signal="body_exited" from="World/environment/Cooking/CookingArea" to="World/environment/Cooking" method="_on_chopping_area_body_exited"]
-[connection signal="body_entered" from="World/environment/GetEggs/EggArea" to="World/environment/GetEggs" method="_on_chopping_area_body_entered"]
-[connection signal="body_exited" from="World/environment/GetEggs/EggArea" to="World/environment/GetEggs" method="_on_chopping_area_body_exited"]
-[connection signal="body_entered" from="World/environment/GetRice/RiceArea" to="World/environment/GetRice" method="_on_chopping_area_body_entered"]
-[connection signal="body_exited" from="World/environment/GetRice/RiceArea" to="World/environment/GetRice" method="_on_chopping_area_body_exited"]
+[connection signal="body_entered" from="World/environment/WriteMessage/WritingArea" to="World/environment/WriteMessage" method="_on_chopping_area_body_entered"]
+[connection signal="body_exited" from="World/environment/WriteMessage/WritingArea" to="World/environment/WriteMessage" method="_on_chopping_area_body_exited"]
+[connection signal="body_entered" from="World/environment/Cooking/CookingArea" to="World/environment/Cooking" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="World/environment/Cooking/CookingArea" to="World/environment/Cooking" method="_on_area_3d_body_exited"]
+[connection signal="body_entered" from="World/environment/CookRice/RiceArea" to="World/environment/CookRice" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="World/environment/CookRice/RiceArea" to="World/environment/CookRice" method="_on_area_3d_body_exited"]

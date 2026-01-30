@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dxtip61m4v7rx" path="res://Assets/3D/Sprites/customer model.glb" id="2_tqmci"]
 [ext_resource type="Script" uid="uid://ci8q2i4a2343w" path="res://Scripts/interact.gd" id="3_tqmci"]
 [ext_resource type="FontFile" uid="uid://bskeu06nps0kw" path="res://Fonts/Start Story.ttf" id="4_lk7k8"]
-[ext_resource type="Script" uid="uid://fngeonyditsh" path="res://Scenes/dialogue_manager.gd" id="5_lk7k8"]
+[ext_resource type="Script" uid="uid://fngeonyditsh" path="res://Scripts/dialogue_manager.gd" id="5_lk7k8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vchtg"]
 size = Vector3(1.4745148, 1.9791641, 1.1408434)
@@ -57,9 +57,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -350.0
-offset_top = -256.0
+offset_top = -198.0
 offset_right = 350.0
-offset_bottom = -56.0
+offset_bottom = -48.0
 grow_horizontal = 2
 grow_vertical = 0
 script = ExtResource("5_lk7k8")
@@ -81,7 +81,7 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -318.0
-offset_top = -66.0
+offset_top = -62.0
 offset_right = 318.0
 offset_bottom = 61.0
 grow_horizontal = 2
@@ -89,10 +89,6 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
 theme_override_fonts/font = ExtResource("4_lk7k8")
 theme_override_font_sizes/font_size = 20
-text = "story blahfjsk fjksdlfj sjkfl flkjf jflksjfklsjflksj flk
-fjlskjflksd flksflk flksj flkjdflkjs
-jfklsjflk jflkjslkfj slkfj
-kldlfj lskjf lksj flk"
 horizontal_alignment = 1
 
 [connection signal="body_entered" from="Interact/InteractArea" to="Interact" method="_on_interact_area_body_entered"]

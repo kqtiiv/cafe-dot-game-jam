@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://d12660gr4jidx" path="res://Assets/3D/World/floor.png" id="3_4wdbe"]
 [ext_resource type="PackedScene" uid="uid://ejtf25hfn0ny" path="res://Scenes/path_follow.tscn" id="3_42jam"]
 [ext_resource type="PackedScene" uid="uid://brn4rs1o2w6wi" path="res://Assets/3D/World/window.glb" id="4_lefxv"]
-[ext_resource type="Script" uid="uid://dtptta1hasb5i" path="res://Scripts/chopping-board.gd" id="4_uq1df"]
+[ext_resource type="Script" uid="uid://dtptta1hasb5i" path="res://Scripts/hold_interaction.gd" id="4_uq1df"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ekhe2"]
 albedo_texture = ExtResource("2_ekhe2")

@@ -19,6 +19,7 @@ func _ready() -> void:
 		hide()
 		OptionsUI.Show(show)
 	)
+	
 	quitButton.pressed.connect(func():
 		audio.play()
 		await get_tree().create_timer(0.25).timeout 
