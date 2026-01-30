@@ -1,12 +1,26 @@
-[gd_scene load_steps=6 format=3 uid="uid://ejtf25hfn0ny"]
+[gd_scene load_steps=8 format=3 uid="uid://ejtf25hfn0ny"]
 
 [ext_resource type="Script" uid="uid://daxcvu8djc60i" path="res://Scripts/path_follow.gd" id="1_rwv02"]
 [ext_resource type="PackedScene" uid="uid://dxtip61m4v7rx" path="res://Assets/3D/Sprites/customer model.glb" id="2_tqmci"]
 [ext_resource type="Script" uid="uid://ci8q2i4a2343w" path="res://Scripts/interact.gd" id="3_tqmci"]
 [ext_resource type="FontFile" uid="uid://bskeu06nps0kw" path="res://Fonts/Start Story.ttf" id="4_lk7k8"]
+[ext_resource type="Script" uid="uid://fngeonyditsh" path="res://Scenes/dialogue_manager.gd" id="5_lk7k8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vchtg"]
 size = Vector3(1.4745148, 1.9791641, 1.1408434)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bfbkk"]
+bg_color = Color(0.5176471, 0.23921569, 0.14509805, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.6656041, 0.32135826, 0.20543969, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="PathFollow" type="PathFollow3D"]
 loop = false
@@ -34,6 +48,52 @@ outline_modulate = Color(0.16470589, 0.41960785, 0.5529412, 1)
 text = "E"
 font = ExtResource("4_lk7k8")
 font_size = 42
+
+[node name="DialogueUI" type="Control" parent="Interact"]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -350.0
+offset_top = -256.0
+offset_right = 350.0
+offset_bottom = -56.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("5_lk7k8")
+
+[node name="storybg" type="Panel" parent="Interact/DialogueUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bfbkk")
+
+[node name="dialogue" type="Label" parent="Interact/DialogueUI/storybg"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -318.0
+offset_top = -66.0
+offset_right = 318.0
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
+theme_override_fonts/font = ExtResource("4_lk7k8")
+theme_override_font_sizes/font_size = 20
+text = "story blahfjsk fjksdlfj sjkfl flkjf jflksjfklsjflksj flk
+fjlskjflksd flksflk flksj flkjdflkjs
+jfklsjflk jflkjslkfj slkfj
+kldlfj lskjf lksj flk"
+horizontal_alignment = 1
 
 [connection signal="body_entered" from="Interact/InteractArea" to="Interact" method="_on_interact_area_body_entered"]
 [connection signal="body_exited" from="Interact/InteractArea" to="Interact" method="_on_interact_area_body_exited"]

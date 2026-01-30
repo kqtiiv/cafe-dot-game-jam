@@ -3,7 +3,7 @@ extends PathFollow3D
 signal npc_sat_down 
 
 @export var speed: float = 2.0
-@export var sit_animation_name: String = "sitting-Armature_002"
+@export var sit_animation_name: String = "sitting"
 
 @onready var anim_player = $armature_004/AnimationPlayer
 

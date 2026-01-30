@@ -1,6 +1,7 @@
 extends Node3D
 
 @onready var prompt: Label3D = $Prompt
+@onready var dialogue: Control = $DialogueUI
 
 @export var npc_controller: PathFollow3D 
 
@@ -17,7 +18,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		perform_interaction()
 
 func perform_interaction() -> void:
-	print("Interacted")
+	prompt.visible = false
+	dialogue.display_text("It's a lovely day to sit by the fire, isn't it?")
 
 func _on_interact_area_body_entered(body: Node3D) -> void:
 	if body is Player: 
@@ -35,6 +37,5 @@ func _on_npc_sat_down():
 func update_prompt_visibility():
 	if player_in_range and npc_controller.has_sat_down:
 		prompt.visible = true
-		# Add pop-in animation here
 	else:
 		prompt.visible = false
