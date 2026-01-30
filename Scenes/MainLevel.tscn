@@ -1,16 +1,16 @@
 [gd_scene load_steps=24 format=3 uid="uid://3i6i7utpdhxv"]
 
 [ext_resource type="PackedScene" uid="uid://dhhsekj4kfdfx" path="res://Assets/3D/World/environment.glb" id="1_8vsrk"]
-[ext_resource type="Script" uid="uid://c8r0w8ay0pbyh" path="res://Scripts/world.gd" id="1_o15vh"]
+[ext_resource type="Script" path="res://Scenes/world.gd" id="1_o15vh"]
 [ext_resource type="PackedScene" uid="uid://megv2xypt8uj" path="res://Scenes/PauseMenu.tscn" id="1_r7jfx"]
 [ext_resource type="PackedScene" uid="uid://c005gn3ouf4f0" path="res://Assets/3D/Sprites/armature_004.tscn" id="2_c77c4"]
 [ext_resource type="PackedScene" uid="uid://ejtf25hfn0ny" path="res://Scenes/path_follow.tscn" id="2_ymtjv"]
-[ext_resource type="Script" uid="uid://dtptta1hasb5i" path="res://Scripts/chopping-board.gd" id="4_2a20n"]
+[ext_resource type="Script" path="res://Scenes/chopping-board.gd" id="4_2a20n"]
 [ext_resource type="Texture2D" uid="uid://crorg07x0qirt" path="res://Assets/3D/World/wallpaper.png" id="4_dnhx3"]
 [ext_resource type="FontFile" uid="uid://bskeu06nps0kw" path="res://Fonts/Start Story.ttf" id="5_0e82a"]
 [ext_resource type="Texture2D" uid="uid://d12660gr4jidx" path="res://Assets/3D/World/floor.png" id="5_7g1pw"]
 [ext_resource type="AudioStream" uid="uid://ko3qh8jpk62o" path="res://Assets/Sounds/dingdong.mp3" id="7_s1b4b"]
-[ext_resource type="PackedScene" uid="uid://brn4rs1o2w6wi" path="res://Assets/3D/World/window.glb" id="10_o8t5j"]
+[ext_resource type="PackedScene" uid="uid://dcxbbt61cf6xw" path="res://Assets/3D/World/window.glb" id="10_o8t5j"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_dnhx3"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -69,7 +69,6 @@ transform = Transform3D(-0.12571995, 0.43775925, -0.89025915, 0.061211813, 0.899
 stream = ExtResource("7_s1b4b")
 volume_db = -29.176
 max_db = 2.647
-bus = &"SFX"
 emission_angle_enabled = true
 emission_angle_degrees = 65.0
 
@@ -85,32 +84,32 @@ light_specular = 2.366
 shadow_enabled = true
 
 [node name="Wall" type="CSGBox3D" parent="World"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.889232, 3.0328653, -1.561409)
+transform = Transform3D(1, 0, 0, 0, 0.765, 0, 0, 0, 1, 5.889232, 2.35092, -1.561409)
 use_collision = true
 size = Vector3(0.12, 7.069, 13.639)
 material = SubResource("StandardMaterial3D_o8t5j")
 
 [node name="Wall2" type="CSGBox3D" parent="World"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.699817, 3.0343628, -1.542366)
+transform = Transform3D(1, 0, 0, 0, 0.765, 0, 0, 0, 1, -5.699817, 2.3524175, -1.542366)
 use_collision = true
 size = Vector3(0.119628906, 7.0687256, 13.6392975)
 material = SubResource("StandardMaterial3D_4s6sc")
 
 [node name="Doorhole" type="CSGBox3D" parent="World/Wall2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007650852, -1.954041, -4.4993825)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007650852, -1.7086744, -4.4993825)
 operation = 2
-size = Vector3(0.137146, 2.2819614, 1.560257)
+size = Vector3(0.137146, 2.7726946, 1.560257)
 
 [node name="Wall3" type="CSGBox3D" parent="World"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.15704072, 3.0350704, 5.2355194)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 0.765, 0, -1, 0, -4.371139e-08, 0.10573876, 2.353125, 5.2355194)
 use_collision = true
-size = Vector3(0.119628906, 7.0687256, 11.781624)
+size = Vector3(0.119628906, 7.0687256, 11.67902)
 material = SubResource("StandardMaterial3D_w85lu")
 
 [node name="Wall4" type="CSGBox3D" parent="World"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.13856745, 3.0343628, -8.329052)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 0.765, 0, -1, 0, -4.371139e-08, 0.09458971, 2.3524175, -8.329052)
 use_collision = true
-size = Vector3(0.119628906, 7.0687256, 11.781624)
+size = Vector3(0.119628906, 7.0687256, 11.693668)
 material = SubResource("StandardMaterial3D_e5mp2")
 
 [node name="Ground" type="MeshInstance3D" parent="World"]
@@ -221,19 +220,19 @@ font_size = 42
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.3405654)
 
 [node name="window" parent="World" instance=ExtResource("10_o8t5j")]
-transform = Transform3D(0.925, 0, 0, 0, 0.925, 0, 0, 0, 0.925, -5.6386366, 3.3166013, -2.182565)
+transform = Transform3D(0.765, 0, 0, 0, 0.765, 0, 0, 0, 0.88, -5.6386366, 2.5644183, -2.182565)
 
 [node name="window2" parent="World" instance=ExtResource("10_o8t5j")]
-transform = Transform3D(-4.0433033e-08, 0, -0.925, 0, 0.925, 0, 0.925, 0, -4.0433033e-08, -2.369406, 3.3166013, -8.276681)
+transform = Transform3D(-3.343921e-08, 0, -0.88, 0, 0.765, 0, 0.765, 0, -3.8466023e-08, -2.369406, 2.5644183, -8.263044)
 
 [node name="window3" parent="World" instance=ExtResource("10_o8t5j")]
-transform = Transform3D(-4.0433033e-08, 0, -0.925, 0, 0.925, 0, 0.925, 0, -4.0433033e-08, 2.5867305, 3.3166013, -8.276681)
+transform = Transform3D(-3.343921e-08, 0, -0.88, 0, 0.765, 0, 0.765, 0, -3.8466023e-08, 2.5867305, 2.5644183, -8.263044)
 
 [node name="window4" parent="World" instance=ExtResource("10_o8t5j")]
-transform = Transform3D(-0.925, 0, 1.3967112e-07, 0, 0.925, 0, -1.3967112e-07, 0, -0.925, 5.8123813, 3.3166013, -4.7299757)
+transform = Transform3D(-0.765, 0, 1.3287631e-07, 0, 0.765, 0, -1.1551179e-07, 0, -0.88, 5.8123813, 2.5644183, -4.7299757)
 
 [node name="window5" parent="World" instance=ExtResource("10_o8t5j")]
-transform = Transform3D(-0.925, 0, 1.3967112e-07, 0, 0.925, 0, -1.3967112e-07, 0, -0.925, 5.8123813, 3.3166013, 0.99077773)
+transform = Transform3D(-0.765, 0, 1.3287631e-07, 0, 0.765, 0, -1.1551179e-07, 0, -0.88, 5.8123813, 2.5644183, 0.99077773)
 
 [node name="Path3D" type="Path3D" parent="World"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.201359)
