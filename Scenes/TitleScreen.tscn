@@ -1,52 +1,9 @@
-[gd_scene load_steps=24 format=3 uid="uid://bmw5q3hto54x5"]
+[gd_scene load_steps=16 format=3 uid="uid://bmw5q3hto54x5"]
 
 [ext_resource type="Script" uid="uid://dvrrsl3m5w25p" path="res://Scripts/main_menu.gd" id="1_8l4an"]
-[ext_resource type="FontFile" uid="uid://c42aj427552up" path="res://Fonts/Vividly-Regular.ttf" id="2_5c2t2"]
-[ext_resource type="Script" uid="uid://cnhpx34br3d0j" path="res://Scripts/options_ui.gd" id="2_8l4an"]
 [ext_resource type="FontFile" uid="uid://bskeu06nps0kw" path="res://Fonts/Start Story.ttf" id="3_bawyk"]
 [ext_resource type="Texture2D" uid="uid://dqb1yyj2u8vya" path="res://Images/menuscreen2wip.png" id="4_qfyqv"]
 [ext_resource type="AudioStream" uid="uid://c8lib81jxdfps" path="res://Assets/Sounds/click.mp3" id="6_bawyk"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pie25"]
-bg_color = Color(0.22723183, 0.53280044, 0.69686294, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2jiiu"]
-bg_color = Color(0.5176471, 0.23921569, 0.14509805, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-expand_margin_top = 10.0
-expand_margin_bottom = 10.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5c2t2"]
-bg_color = Color(0.5176471, 0.23921569, 0.14509805, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-expand_margin_top = 10.0
-expand_margin_bottom = 10.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bawyk"]
-bg_color = Color(0.5176471, 0.23921569, 0.14509805, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-expand_margin_top = 10.0
-expand_margin_bottom = 10.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qfyqv"]
-bg_color = Color(0.5176471, 0.23921569, 0.14509805, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-expand_margin_top = 10.0
-expand_margin_bottom = 10.0
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pie25"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_opfnp"]
 texture = ExtResource("4_qfyqv")
@@ -142,111 +99,19 @@ shadow_offset = Vector2(4.835, 5.605)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wyh8j"]
 
-[node name="TitleScreen" type="Control"]
+[node name="TitleScreen" type="Control" node_paths=PackedStringArray("playButton", "optionsButton", "quitButton")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8l4an")
+playButton = NodePath("MainMenuUI/Content/Start")
+optionsButton = NodePath("MainMenuUI/Content/Settings")
+quitButton = NodePath("MainMenuUI/Content/Exit")
 
-[node name="OptionsUI" type="Panel" parent="." node_paths=PackedStringArray("soundEffectsButton", "musicButton", "closeButton")]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_pie25")
-script = ExtResource("2_8l4an")
-soundEffectsButton = NodePath("Content/SoundEffectsButton")
-musicButton = NodePath("Content/MusicButton")
-closeButton = NodePath("Content/CloseButton")
-
-[node name="Content" type="VBoxContainer" parent="OptionsUI"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -150.0
-offset_top = -116.5
-offset_right = 150.0
-offset_bottom = 116.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 46
-
-[node name="OptionsText" type="Label" parent="OptionsUI/Content"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.9843137, 0.73333335, 0.25490198, 1)
-theme_override_colors/font_shadow_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
-theme_override_constants/shadow_offset_x = -4
-theme_override_constants/shadow_offset_y = 1
-theme_override_constants/outline_size = -205
-theme_override_fonts/font = ExtResource("2_5c2t2")
-theme_override_font_sizes/font_size = 76
-text = "Options"
-horizontal_alignment = 1
-uppercase = true
-
-[node name="SoundEffectsButton" type="Button" parent="OptionsUI/Content"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
-theme_override_colors/font_focus_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
-theme_override_colors/font_pressed_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
-theme_override_colors/font_hover_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
-theme_override_fonts/font = ExtResource("3_bawyk")
-theme_override_font_sizes/font_size = 29
-theme_override_styles/normal = SubResource("StyleBoxFlat_2jiiu")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_5c2t2")
-theme_override_styles/hover = SubResource("StyleBoxFlat_bawyk")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_qfyqv")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_pie25")
-text = "Sound Effects: 5"
-
-[node name="MusicButton" type="Button" parent="OptionsUI/Content"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
-theme_override_colors/font_focus_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
-theme_override_colors/font_pressed_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
-theme_override_colors/font_hover_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
-theme_override_fonts/font = ExtResource("3_bawyk")
-theme_override_font_sizes/font_size = 29
-theme_override_styles/normal = SubResource("StyleBoxFlat_2jiiu")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_5c2t2")
-theme_override_styles/hover = SubResource("StyleBoxFlat_bawyk")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_qfyqv")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_pie25")
-text = "Music: 5"
-
-[node name="CloseButton" type="Button" parent="OptionsUI/Content"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
-theme_override_colors/font_focus_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
-theme_override_colors/font_pressed_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
-theme_override_colors/font_hover_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
-theme_override_fonts/font = ExtResource("3_bawyk")
-theme_override_font_sizes/font_size = 29
-theme_override_styles/normal = SubResource("StyleBoxFlat_2jiiu")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_5c2t2")
-theme_override_styles/hover = SubResource("StyleBoxFlat_bawyk")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_qfyqv")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_pie25")
-text = "Back"
-
-[node name="button_click" type="AudioStreamPlayer" parent="OptionsUI/Content"]
-stream = ExtResource("6_bawyk")
-volume_db = -5.318
-pitch_scale = 1.88
-bus = &"SFX"
-
-[node name="MainMenuUI" type="Panel" parent="." node_paths=PackedStringArray("playButton", "optionsButton", "quitButton")]
+[node name="MainMenuUI" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -254,10 +119,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_opfnp")
-script = ExtResource("1_8l4an")
-playButton = NodePath("Content/Start")
-optionsButton = NodePath("Content/Settings")
-quitButton = NodePath("Content/Exit")
 
 [node name="Content" type="VBoxContainer" parent="MainMenuUI"]
 layout_mode = 1
@@ -326,7 +187,6 @@ text = "Exit"
 stream = ExtResource("6_bawyk")
 volume_db = -5.318
 pitch_scale = 1.88
-bus = &"SFX"
 
 [connection signal="pressed" from="MainMenuUI/Content/Start" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MainMenuUI/Content/Settings" to="." method="_on_settings_button_pressed"]

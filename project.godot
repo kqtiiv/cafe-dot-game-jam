@@ -22,6 +22,7 @@ SoundManager="*res://Scenes/sound_manager.tscn"
 
 MusicManager="*res://Scenes/music_manager.tscn"
 SoundManager="*res://Scenes/sound_manager.tscn"
+OptionsUI="*res://Scenes/options_ui.tscn"
 
 [input]
 

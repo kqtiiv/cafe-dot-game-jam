@@ -239,9 +239,7 @@ transform = Transform3D(-0.925, 0, 1.3967112e-07, 0, 0.925, 0, -1.3967112e-07, 0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.201359)
 curve = SubResource("Curve3D_txgp6")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("1_r7jfx")]
+[node name="PauseMenu" parent="." instance=ExtResource("1_r7jfx")]
 
 [connection signal="body_entered" from="World/environment/Chopping/ChoppingArea" to="World/environment/Chopping" method="_on_chopping_area_body_entered"]
 [connection signal="body_exited" from="World/environment/Chopping/ChoppingArea" to="World/environment/Chopping" method="_on_chopping_area_body_exited"]

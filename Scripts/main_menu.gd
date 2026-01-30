@@ -1,9 +1,9 @@
-extends Panel
+extends Control
 
 @export var playButton: Button
 @export var optionsButton: Button
 @export var quitButton: Button
-@onready var audio = $Content/button_click
+@onready var audio = $MainMenuUI/Content/button_click
 
 func _ready() -> void:
 	playButton.grab_focus()
@@ -17,7 +17,7 @@ func _ready() -> void:
 	optionsButton.pressed.connect(func(): 
 		audio.play()
 		hide()
-		OptionsUI.Instance.Show(show)
+		OptionsUI.Show(show)
 	)
 	quitButton.pressed.connect(func():
 		audio.play()
