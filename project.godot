@@ -14,10 +14,14 @@ config/name="cafe dot"
 run/main_scene="uid://bmw5q3hto54x5"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
+"<<<<<<<HEAD[audio]buses/default_bus_layout"=""
+"<<<<<<<HEAD[autoload]MusicManager"="*res://Scenes/music_manager.tscn"
+SoundManager="*res://Scenes/sound_manager.tscn"
 
-[audio]
+[autoload]
 
-buses/default_bus_layout=""
+MusicManager="*res://Scenes/music_manager.tscn"
+SoundManager="*res://Scenes/sound_manager.tscn"
 
 [input]
 

@@ -1,13 +1,10 @@
-[gd_scene load_steps=27 format=3 uid="uid://bmw5q3hto54x5"]
+[gd_scene load_steps=24 format=3 uid="uid://bmw5q3hto54x5"]
 
 [ext_resource type="Script" uid="uid://dvrrsl3m5w25p" path="res://Scripts/main_menu.gd" id="1_8l4an"]
 [ext_resource type="FontFile" uid="uid://c42aj427552up" path="res://Fonts/Vividly-Regular.ttf" id="2_5c2t2"]
-[ext_resource type="Script" uid="uid://cnhpx34br3d0j" path="res://Scenes/options_ui.gd" id="2_8l4an"]
+[ext_resource type="Script" uid="uid://cnhpx34br3d0j" path="res://Scripts/options_ui.gd" id="2_8l4an"]
 [ext_resource type="FontFile" uid="uid://bskeu06nps0kw" path="res://Fonts/Start Story.ttf" id="3_bawyk"]
-[ext_resource type="Script" uid="uid://ddkganw2c3ne" path="res://Scenes/music_manager.gd" id="4_emot1"]
-[ext_resource type="Script" uid="uid://b4cb3c8a2ie74" path="res://Scenes/sound_manager.gd" id="4_n15yj"]
 [ext_resource type="Texture2D" uid="uid://dqb1yyj2u8vya" path="res://Images/menuscreen2wip.png" id="4_qfyqv"]
-[ext_resource type="AudioStream" uid="uid://sc1rh6ov8y1t" path="res://Assets/Sounds/PLACEHOLDER.mp3" id="5_i5sur"]
 [ext_resource type="AudioStream" uid="uid://c8lib81jxdfps" path="res://Assets/Sounds/click.mp3" id="6_bawyk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pie25"]
@@ -247,6 +244,7 @@ text = "Back"
 stream = ExtResource("6_bawyk")
 volume_db = -5.318
 pitch_scale = 1.88
+bus = &"SFX"
 
 [node name="MainMenuUI" type="Panel" parent="." node_paths=PackedStringArray("playButton", "optionsButton", "quitButton")]
 layout_mode = 1
@@ -328,16 +326,7 @@ text = "Exit"
 stream = ExtResource("6_bawyk")
 volume_db = -5.318
 pitch_scale = 1.88
-
-[node name="MusicManager" type="Node3D" parent="." node_paths=PackedStringArray("audioStreamPlayer")]
-script = ExtResource("4_emot1")
-audioStreamPlayer = NodePath("Placeholder")
-
-[node name="Placeholder" type="AudioStreamPlayer" parent="MusicManager"]
-stream = ExtResource("5_i5sur")
-
-[node name="SoundManager" type="Node3D" parent="."]
-script = ExtResource("4_n15yj")
+bus = &"SFX"
 
 [connection signal="pressed" from="MainMenuUI/Content/Start" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MainMenuUI/Content/Settings" to="." method="_on_settings_button_pressed"]
