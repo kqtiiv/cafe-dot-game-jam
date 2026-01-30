@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://3i6i7utpdhxv" path="res://Scenes/MainLevel.tscn" id="1_at2u3"]
 [ext_resource type="Texture2D" uid="uid://crorg07x0qirt" path="res://Assets/3D/World/wallpaper.png" id="2_ekhe2"]
 [ext_resource type="Texture2D" uid="uid://d12660gr4jidx" path="res://Assets/3D/World/floor.png" id="3_4wdbe"]
-[ext_resource type="PackedScene" uid="uid://brn4rs1o2w6wi" path="res://Assets/3D/World/window.glb" id="4_lefxv"]
+[ext_resource type="PackedScene" uid="uid://dcxbbt61cf6xw" path="res://Assets/3D/World/window.glb" id="4_lefxv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ekhe2"]
 albedo_texture = ExtResource("2_ekhe2")
@@ -24,32 +24,54 @@ uv1_triplanar = true
 
 [node name="MainWorld" instance=ExtResource("1_at2u3")]
 
+[node name="doorbell" parent="World" index="0"]
+bus = &"Master"
+
 [node name="Wall" parent="World" index="3"]
+transform = Transform3D(1, 0, 0, 0, 0.85, 0, 0, 0, 1, 5.889232, 2.6100116, -1.561409)
 material = SubResource("StandardMaterial3D_ekhe2")
 
 [node name="Wall2" parent="World" index="4"]
+transform = Transform3D(1, 0, 0, 0, 0.85, 0, 0, 0, 1, -5.699817, 2.611509, -1.542366)
 material = SubResource("StandardMaterial3D_4wdbe")
 
 [node name="Wall3" parent="World" index="5"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 0.85, 0, -1, 0, -4.371139e-08, 0.15704072, 2.6122167, 5.2355194)
 material = SubResource("StandardMaterial3D_lefxv")
 
 [node name="Wall4" parent="World" index="6"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 0.85, 0, -1, 0, -4.371139e-08, 0.13856745, 2.611509, -8.329052)
 material = SubResource("StandardMaterial3D_uq1df")
 
 [node name="Ground" parent="World" index="7"]
 surface_material_override/0 = SubResource("StandardMaterial3D_1tp12")
 
 [node name="window6" parent="World" index="10" instance=ExtResource("4_lefxv")]
-transform = Transform3D(0.925, 0, 0, 0, 0.925, 0, 0, 0, 0.925, -5.6386366, 3.3166013, -2.182565)
+transform = Transform3D(0.84, 0, 0, 0, 0.84, 0, 0, 0, 0.84, -5.6386366, 2.7671397, -2.182565)
 
 [node name="window7" parent="World" index="11" instance=ExtResource("4_lefxv")]
-transform = Transform3D(-4.0433033e-08, 0, -0.925, 0, 0.925, 0, 0.925, 0, -4.0433033e-08, -2.369406, 3.3166013, -8.276681)
+transform = Transform3D(-3.6717566e-08, 0, -0.84, 0, 0.84, 0, 0.84, 0, -3.6717566e-08, -2.369406, 2.7671397, -8.276681)
 
 [node name="window8" parent="World" index="12" instance=ExtResource("4_lefxv")]
-transform = Transform3D(-4.0433033e-08, 0, -0.925, 0, 0.925, 0, 0.925, 0, -4.0433033e-08, 2.5867305, 3.3166013, -8.276681)
+transform = Transform3D(-3.6717566e-08, 0, -0.84, 0, 0.84, 0, 0.84, 0, -3.6717566e-08, 2.5867305, 2.7671397, -8.276681)
 
 [node name="window9" parent="World" index="13" instance=ExtResource("4_lefxv")]
-transform = Transform3D(-0.925, 0, 1.3967112e-07, 0, 0.925, 0, -1.3967112e-07, 0, -0.925, 5.8123813, 3.3166013, -4.7299757)
+transform = Transform3D(-0.84, 0, 1.2683647e-07, 0, 0.84, 0, -1.2683647e-07, 0, -0.84, 5.8123813, 2.7671397, -4.7299757)
 
 [node name="window10" parent="World" index="14" instance=ExtResource("4_lefxv")]
-transform = Transform3D(-0.925, 0, 1.3967112e-07, 0, 0.925, 0, -1.3967112e-07, 0, -0.925, 5.8123813, 3.3166013, 0.99077773)
+transform = Transform3D(-0.84, 0, 1.2683647e-07, 0, 0.84, 0, -1.2683647e-07, 0, -0.84, 5.8123813, 2.7671397, 0.99077773)
+
+[node name="window" parent="World" index="15"]
+transform = Transform3D(0.84, 0, 0, 0, 0.84, 0, 0, 0, 0.84, -5.6386366, 2.7671397, -2.182565)
+
+[node name="window2" parent="World" index="16"]
+transform = Transform3D(-3.6717566e-08, 0, -0.84, 0, 0.84, 0, 0.84, 0, -3.6717566e-08, -2.369406, 2.7671397, -8.276681)
+
+[node name="window3" parent="World" index="17"]
+transform = Transform3D(-3.6717566e-08, 0, -0.84, 0, 0.84, 0, 0.84, 0, -3.6717566e-08, 2.5867305, 2.7671397, -8.276681)
+
+[node name="window4" parent="World" index="18"]
+transform = Transform3D(-0.84, 0, 1.2683647e-07, 0, 0.84, 0, -1.2683647e-07, 0, -0.84, 5.8123813, 2.7671397, -4.7299757)
+
+[node name="window5" parent="World" index="19"]
+transform = Transform3D(-0.84, 0, 1.2683647e-07, 0, 0.84, 0, -1.2683647e-07, 0, -0.84, 5.8123813, 2.7671397, 0.99077773)
