@@ -1,9 +1,10 @@
-extends Panel
-class_name OptionsUI
+extends Control
 
 static var _instance: OptionsUI = null
 static var Instance: OptionsUI:
 	get: return _instance
+	
+@onready var audio = $OptionsUI/Content/button_click
 
 @export var soundEffectsButton: Button
 @export var musicButton: Button
@@ -20,16 +21,19 @@ func _ready() -> void:
 	UpdateVisual()
 	
 	soundEffectsButton.pressed.connect(func(): 
+		audio.play()
 		SoundManager.ChangeVolume() 
 		UpdateVisual()
 	)
 	
 	musicButton.pressed.connect(func(): 
+		audio.play()
 		MusicManager.ChangeVolume()
 		UpdateVisual()
 	)
 	
 	closeButton.pressed.connect(func(): 
+		audio.play()
 		hide()
 		if _onCloseButtonAction.is_valid():
 			_onCloseButtonAction.call()
@@ -44,10 +48,10 @@ func _exit_tree() -> void:
 
 func UpdateVisual() -> void:
 	if SoundManager:
-		soundEffectsButton.text = "Sound Effects: " + str(round(SoundManager.GetVolume() * 10.0))
+		soundEffectsButton.text = "Sound Effects: " + str(round(SoundManager.GetVolume() * 10))
 	
 	if MusicManager:
-		musicButton.text = "Music: " + str(round(MusicManager.GetVolume() * 10.0))
+		musicButton.text = "Music: " + str(round(MusicManager.GetVolume() * 10))
 
 func Show(onCloseButtonAction: Callable) -> void:
 	_onCloseButtonAction = onCloseButtonAction

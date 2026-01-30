@@ -4,6 +4,43 @@
 [ext_resource type="FontFile" uid="uid://bskeu06nps0kw" path="res://Fonts/Start Story.ttf" id="2_qwhev"]
 [ext_resource type="AudioStream" uid="uid://c8lib81jxdfps" path="res://Assets/Sounds/click.mp3" id="3_5w4ur"]
 
+[sub_resource type="Animation" id="Animation_siy43"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ey1tb"]
+resource_name = "blur"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yxrls"]
+_data = {
+&"RESET": SubResource("Animation_siy43"),
+&"blur": SubResource("Animation_ey1tb")
+}
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lj4oq"]
 bg_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
 corner_radius_top_left = 60
@@ -170,44 +207,7 @@ expand_margin_bottom = 5.0
 bg_color = Color(0.6, 0.6, 0.6, 0)
 border_color = Color(0.8, 0.8, 0.8, 0)
 
-[sub_resource type="Animation" id="Animation_siy43"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Panel:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_ey1tb"]
-resource_name = "blur"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Panel:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_yxrls"]
-_data = {
-&"RESET": SubResource("Animation_siy43"),
-&"blur": SubResource("Animation_ey1tb")
-}
-
-[node name="PauseMenu" type="Control"]
+[node name="PauseMenu" type="Control" node_paths=PackedStringArray("resumeButton", "restartButton", "settingsButton", "quitButton")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -216,6 +216,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lj4oq")
+resumeButton = NodePath("Panel/Content/Resume")
+restartButton = NodePath("Panel/Content/Restart")
+settingsButton = NodePath("Panel/Content/Settings")
+quitButton = NodePath("Panel/Content/Quit")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_yxrls")
+}
 
 [node name="Panel" type="Panel" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -233,7 +242,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_lj4oq")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+[node name="Content" type="VBoxContainer" parent="Panel"]
 custom_minimum_size = Vector2(1.15, 0)
 layout_mode = 1
 anchors_preset = 8
@@ -250,7 +259,7 @@ grow_vertical = 2
 theme_override_constants/separation = 26
 alignment = 1
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer"]
+[node name="Label" type="Label" parent="Panel/Content"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.22723183, 0.53280044, 0.69686294, 1)
 theme_override_font_sizes/font_size = 20
@@ -258,7 +267,7 @@ text = "₊✩‧₊˚౨ৎ˚₊✩‧₊"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Resume" type="Button" parent="Panel/VBoxContainer"]
+[node name="Resume" type="Button" parent="Panel/Content"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.5176471, 0.23921569, 0.14117648, 1)
 theme_override_colors/font_focus_color = Color(0.5176471, 0.23921569, 0.14509805, 1)
@@ -274,7 +283,7 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_lptsj")
 theme_override_styles/focus = SubResource("StyleBoxFlat_mys0b")
 text = "Resume"
 
-[node name="Restart" type="Button" parent="Panel/VBoxContainer"]
+[node name="Restart" type="Button" parent="Panel/Content"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.5176471, 0.23921569, 0.14509805, 1)
 theme_override_colors/font_focus_color = Color(0.5176471, 0.23921569, 0.14509805, 1)
@@ -290,7 +299,7 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_pmvjn")
 theme_override_styles/focus = SubResource("StyleBoxFlat_1363l")
 text = "Restart"
 
-[node name="Settings" type="Button" parent="Panel/VBoxContainer"]
+[node name="Settings" type="Button" parent="Panel/Content"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.5176471, 0.23921569, 0.14509805, 1)
 theme_override_colors/font_focus_color = Color(0.5176471, 0.23921569, 0.14509805, 1)
@@ -306,7 +315,7 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_dhr51")
 theme_override_styles/focus = SubResource("StyleBoxFlat_p6p71")
 text = "Settings"
 
-[node name="Quit" type="Button" parent="Panel/VBoxContainer"]
+[node name="Quit" type="Button" parent="Panel/Content"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.5176471, 0.23921569, 0.14509805, 1)
 theme_override_colors/font_focus_color = Color(0.5176471, 0.23921569, 0.14509805, 1)
@@ -322,18 +331,8 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_mexcr")
 theme_override_styles/focus = SubResource("StyleBoxFlat_8kogi")
 text = "Quit"
 
-[node name="button_click" type="AudioStreamPlayer" parent="Panel/VBoxContainer"]
+[node name="button_click" type="AudioStreamPlayer" parent="Panel/Content"]
 stream = ExtResource("3_5w4ur")
 volume_db = -8.864
 pitch_scale = 1.66
 bus = &"SFX"
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_yxrls")
-}
-
-[connection signal="pressed" from="Panel/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

@@ -3,4 +3,6 @@
 [ext_resource type="Script" uid="uid://b4cb3c8a2ie74" path="res://Scripts/sound_manager.gd" id="1_32i44"]
 
 [node name="SoundManager" type="Node3D"]
+process_priority = -1
+visible = false
 script = ExtResource("1_32i44")

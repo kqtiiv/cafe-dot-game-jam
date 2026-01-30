@@ -19,7 +19,6 @@ func _on_chopping_area_body_entered(body: Node3D) -> void:
 	if body is Player: 
 		player_in_range = true
 		prompt.visible = true
-		# Add a 'pop-in' animation here
 
 func _on_chopping_area_body_exited(body: Node3D) -> void:
 	if body is Player:

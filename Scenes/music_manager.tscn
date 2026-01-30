@@ -4,6 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://sc1rh6ov8y1t" path="res://Assets/Sounds/PLACEHOLDER.mp3" id="2_sdmu8"]
 
 [node name="Node3D" type="Node3D"]
+visible = false
 script = ExtResource("1_hsxb6")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

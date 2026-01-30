@@ -26,7 +26,6 @@ func ChangeVolume() -> void:
 		
 	_update_bus_volume()
 	
-	# Save the new setting
 	var saveFile = FileAccess.open(SAVE_FILE_SOUND_EFFECTS_VOLUME, FileAccess.WRITE)
 	saveFile.store_double(_volume)
 
