@@ -25,6 +25,7 @@ SoundManager="*res://Scenes/sound_manager.tscn"
 OptionsUI="*res://Scenes/options_ui.tscn"
 GameManager="*res://Scenes/game_manager.tscn"
 CookingUI="*res://Scenes/cooking.tscn"
+EmotionSelect="*res://Scenes/EmotionSelect.tscn"
 
 [global_group]
 

@@ -17,6 +17,7 @@ extends Control
 @export var image5: CanvasItem
 
 func _ready() -> void:
+	hide()
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	_hide_all_images()
 	
@@ -53,4 +54,4 @@ func _go_to_results() -> void:
 
 func _return_to_kitchen() -> void:
 	GameManager.current_step = GameManager.CookingStep.SERVE
-	get_tree().change_scene_to_file("res://Scenes/MainLevel.tscn")
+	hide()
