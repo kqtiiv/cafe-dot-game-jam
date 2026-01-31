@@ -18,7 +18,7 @@ func _process(delta: float) -> void:
 			trigger_minigame()
 
 func trigger_minigame() -> void:
-	SceneTransition.change_scene_to_file("res://scenes/EmotionSelect.tscn")
+	EmotionSelect.show()
 
 func complete_interaction():
 	GameManager.current_step = next_step
