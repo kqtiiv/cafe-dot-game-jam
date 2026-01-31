@@ -49,6 +49,7 @@ expand_margin_bottom = 10.0
 [node name="Control" type="Control" node_paths=PackedStringArray("soundEffectsButton", "musicButton", "closeButton")]
 process_mode = 3
 visible = false
+z_index = 10
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

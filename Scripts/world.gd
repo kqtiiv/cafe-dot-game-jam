@@ -3,6 +3,8 @@ extends Node3D
 @onready var my_path_1 = $World/Path3D
 @export var npc_scene: PackedScene
 
+
+
 func _ready():
 	spawn_npc()
 

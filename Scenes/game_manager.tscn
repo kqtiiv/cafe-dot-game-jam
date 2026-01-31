@@ -1,8 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bkfmvsasnpttk"]
+[gd_scene load_steps=2 format=3 uid="uid://bkfmvsasnpttk"]
 
 [ext_resource type="Script" uid="uid://la68ni4piovg" path="res://Scripts/game_manager.gd" id="1_tmbra"]
-[ext_resource type="PackedScene" uid="uid://ejtf25hfn0ny" path="res://Scenes/path_follow.tscn" id="2_w0f6t"]
 
 [node name="GameManager" type="Node3D"]
 script = ExtResource("1_tmbra")
-npc_scene = ExtResource("2_w0f6t")

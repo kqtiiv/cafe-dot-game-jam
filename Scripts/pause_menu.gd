@@ -46,6 +46,7 @@ func _on_resume_pressed() -> void:
 func _on_restart_pressed() -> void:
 	audio.play()
 	resume()
+	GameManager.reset_game_state()
 	get_tree().reload_current_scene()
 
 func _on_settings_pressed() -> void:
