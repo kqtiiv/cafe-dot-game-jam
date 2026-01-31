@@ -35,7 +35,9 @@ func exit_dialogue() -> void:
 	begin_cooking()
 
 func begin_cooking() -> void:	
-	CookingUI.show()
 	if GameManager.current_step == GameManager.CookingStep.TALK_TO_CUSTOMER:
 		GameManager.current_step = GameManager.CookingStep.RICE_COOKER
 		print("Go to Rice Cooker")
+	elif GameManager.current_step == GameManager.CookingStep.SERVE:
+		GameManager.current_step = GameManager.CookingStep.TALK_TO_CUSTOMER
+		print("Talk to customer")

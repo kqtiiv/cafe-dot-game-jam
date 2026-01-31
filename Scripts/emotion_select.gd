@@ -1,5 +1,7 @@
 extends Control
 
+@export var emotion_names: Array[String] = ["Love", "Determination", "Nostalgia", "Happiness", "Affection"]
+
 @export_group("Buttons")
 @export var button1: Button
 @export var button2: Button
@@ -15,21 +17,14 @@ extends Control
 @export var image5: CanvasItem
 
 func _ready() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	_hide_all_images()
 	
-	button1.pressed.connect(_on_emotion_selected.bind(image1))
-	button2.pressed.connect(_on_emotion_selected.bind(image2))
-	button3.pressed.connect(_on_emotion_selected.bind(image3))
-	button4.pressed.connect(_on_emotion_selected.bind(image4))
-	button5.pressed.connect(_on_emotion_selected.bind(image5))
-	
-
-func _on_emotion_selected(selected_image: CanvasItem) -> void:
-	_hide_all_images()
-	
-	if selected_image:
-		selected_image.show()
-		print("Emotion selected!")
+	button1.pressed.connect(_on_emotion_selected.bind(image1, 1))
+	button2.pressed.connect(_on_emotion_selected.bind(image2, 2))
+	button3.pressed.connect(_on_emotion_selected.bind(image3, 3))
+	button4.pressed.connect(_on_emotion_selected.bind(image4, 4))
+	button5.pressed.connect(_on_emotion_selected.bind(image5, 5))
 
 func _hide_all_images() -> void:
 	if image1: image1.hide()
@@ -37,3 +32,25 @@ func _hide_all_images() -> void:
 	if image3: image3.hide()
 	if image4: image4.hide()
 	if image5: image5.hide()
+
+
+func _on_emotion_selected(selected_image: CanvasItem, index: int) -> void:
+	_hide_all_images()
+	selected_image.show()
+	await get_tree().create_timer(1.5).timeout
+	var chosen_emotion = emotion_names[index]
+	GameManager.npc_emotions.append(chosen_emotion)
+	GameManager.npcs_served += 1
+	
+	# Check if we have served all 3 NPCs
+	if GameManager.npcs_served >= GameManager.MAX_NPCS:
+		_go_to_results()
+	else:
+		_return_to_kitchen()
+
+func _go_to_results() -> void:
+	get_tree().change_scene_to_file("res://scenes/ResultsPage.tscn")
+
+func _return_to_kitchen() -> void:
+	GameManager.current_step = GameManager.CookingStep.SERVE
+	get_tree().change_scene_to_file("res://Scenes/MainLevel.tscn")

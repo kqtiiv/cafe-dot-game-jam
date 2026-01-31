@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://3i6i7utpdhxv"]
+[gd_scene load_steps=29 format=3 uid="uid://3i6i7utpdhxv"]
 
 [ext_resource type="PackedScene" uid="uid://dhhsekj4kfdfx" path="res://Assets/3D/World/environment.glb" id="1_8vsrk"]
 [ext_resource type="Script" uid="uid://c8r0w8ay0pbyh" path="res://Scripts/world.gd" id="1_b2f5p"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://crorg07x0qirt" path="res://Assets/3D/World/wallpaper.png" id="4_dnhx3"]
 [ext_resource type="FontFile" uid="uid://bskeu06nps0kw" path="res://Fonts/Start Story.ttf" id="5_0e82a"]
 [ext_resource type="Texture2D" uid="uid://d12660gr4jidx" path="res://Assets/3D/World/floor.png" id="5_7g1pw"]
+[ext_resource type="Script" uid="uid://dtptta1hasb5i" path="res://Scripts/write_message.gd" id="7_e5mp2"]
 [ext_resource type="AudioStream" uid="uid://ko3qh8jpk62o" path="res://Assets/Sounds/dingdong.mp3" id="7_s1b4b"]
 [ext_resource type="PackedScene" uid="uid://brof0gkfufrpq" path="res://Assets/3D/Interactables/plate.glb" id="7_w85lu"]
 [ext_resource type="Script" uid="uid://d0bbviah2ncyb" path="res://Scripts/cooking.gd" id="8_7g1pw"]
@@ -132,6 +133,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20322871, -0.00306499, -1.9
 
 [node name="WriteMessage" type="Node3D" parent="World/environment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.65757394, 0, 0, 0)
+script = ExtResource("7_e5mp2")
+required_step = 3
+next_step = 4
 
 [node name="WritingArea" type="Area3D" parent="World/environment/WriteMessage"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28274512, -0.05114758, 6.4616194)
@@ -140,9 +144,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28274512, -0.05114758, 6.4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13387084, 1.0724323, -0.34266186)
 shape = SubResource("BoxShape3D_ki5qo")
 
-[node name="Plate" parent="World/environment/WriteMessage/WritingArea" instance=ExtResource("7_w85lu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.5207416, 0.0474779, 0.9082176, -1.244425)
-
 [node name="Prompt" type="Label3D" parent="World/environment/WriteMessage"]
 transform = Transform3D(-0.99888617, 0, -0.0059598256, 0, 1, 0, 0.011070895, 0, -0.5377332, -0.23136264, 1.6627644, 5.138147)
 modulate = Color(0.22723183, 0.53280044, 0.69686294, 1)
@@ -150,6 +151,9 @@ outline_modulate = Color(0.16470589, 0.41960785, 0.5529412, 1)
 text = "E"
 font = ExtResource("5_0e82a")
 font_size = 42
+
+[node name="Plate" parent="World/environment/WriteMessage" instance=ExtResource("7_w85lu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.5207416, -0.23526722, 0.85707, 5.2171946)
 
 [node name="Cooking" type="Node3D" parent="World/environment"]
 script = ExtResource("8_7g1pw")
@@ -226,8 +230,8 @@ curve = SubResource("Curve3D_txgp6")
 
 [node name="PauseMenu" parent="." instance=ExtResource("1_r7jfx")]
 
-[connection signal="body_entered" from="World/environment/WriteMessage/WritingArea" to="World/environment/WriteMessage" method="_on_chopping_area_body_entered"]
-[connection signal="body_exited" from="World/environment/WriteMessage/WritingArea" to="World/environment/WriteMessage" method="_on_chopping_area_body_exited"]
+[connection signal="body_entered" from="World/environment/WriteMessage/WritingArea" to="World/environment/WriteMessage" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="World/environment/WriteMessage/WritingArea" to="World/environment/WriteMessage" method="_on_area_3d_body_exited"]
 [connection signal="body_entered" from="World/environment/Cooking/CookingArea" to="World/environment/Cooking" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="World/environment/Cooking/CookingArea" to="World/environment/Cooking" method="_on_area_3d_body_exited"]
 [connection signal="body_entered" from="World/environment/CookRice/RiceArea" to="World/environment/CookRice" method="_on_area_3d_body_entered"]

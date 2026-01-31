@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://ejtf25hfn0ny"]
+[gd_scene load_steps=9 format=3 uid="uid://ejtf25hfn0ny"]
 
 [ext_resource type="Script" uid="uid://daxcvu8djc60i" path="res://Scripts/path_follow.gd" id="1_rwv02"]
 [ext_resource type="PackedScene" uid="uid://dxtip61m4v7rx" path="res://Assets/3D/Sprites/customer model.glb" id="2_tqmci"]
 [ext_resource type="Script" uid="uid://ci8q2i4a2343w" path="res://Scripts/interact.gd" id="3_tqmci"]
 [ext_resource type="FontFile" uid="uid://bskeu06nps0kw" path="res://Fonts/Start Story.ttf" id="4_lk7k8"]
+[ext_resource type="PackedScene" uid="uid://ctc8smku145q0" path="res://Assets/3D/Interactables/omurice.glb" id="5_bfbkk"]
 [ext_resource type="Script" uid="uid://fngeonyditsh" path="res://Scripts/dialogue_manager.gd" id="5_lk7k8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vchtg"]
@@ -48,6 +49,9 @@ outline_modulate = Color(0.16470589, 0.41960785, 0.5529412, 1)
 text = "E"
 font = ExtResource("4_lk7k8")
 font_size = 42
+
+[node name="omurice" parent="Interact" instance=ExtResource("5_bfbkk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5849352, 0.75689423, 6.455614)
 
 [node name="DialogueUI" type="Control" parent="Interact"]
 layout_mode = 3

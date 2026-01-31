@@ -28,3 +28,5 @@ func update_objective_text() -> void:
 			label.text = objective_prefix + "Cook eggs (Hold E)"
 		GameManager.CookingStep.START_MINIGAME:
 			label.text = objective_prefix + "Write a message ~"
+		GameManager.CookingStep.SERVE:
+			label.text = objective_prefix + "Serve the omurice"

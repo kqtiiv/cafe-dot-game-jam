@@ -12,6 +12,13 @@ var player_in_range: bool = false
 func _ready() -> void:
 	prompt.visible = false
 
+func _process(delta: float) -> void:
+	if player_in_range and GameManager.current_step == required_step:
+		if Input.is_action_pressed("interact"):
+			trigger_minigame()
+
+func trigger_minigame() -> void:
+	get_tree().change_scene_to_file("res://scenes/EmotionSelect.tscn")
 
 func complete_interaction():
 	GameManager.current_step = next_step
