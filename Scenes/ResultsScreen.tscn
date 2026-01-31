@@ -10,7 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://di6dktdk4r50p" path="res://Images/omurice/0star.png" id="8_s5hmk"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v8ikh"]
-texture = ExtResource("2_gnyy0")
+texture = ExtResource("2_ykr4e")
+modulate_color = Color(0.9867516, 0.9867516, 0.9867516, 0.8235294)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vcfm3"]
 bg_color = Color(0.5176471, 0.23921569, 0.14509805, 1)
@@ -74,9 +75,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -376.5
-offset_top = 201.0
+offset_top = 226.0
 offset_right = 376.5
-offset_bottom = 272.0
+offset_bottom = 297.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 152
@@ -135,14 +136,19 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -434.5
-offset_top = 81.0
+offset_top = 106.0
 offset_right = 438.5
-offset_bottom = 172.0
+offset_bottom = 197.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_vcfm3")
 
-[node name="Panel" type="Panel" parent="background"]
+[node name="resultsEgg" type="Sprite2D" parent="background"]
+position = Vector2(569.00006, 301.00003)
+scale = Vector2(0.29641542, 0.29641545)
+texture = ExtResource("5_v8ikh")
+
+[node name="results" type="Panel" parent="background"]
 layout_mode = 0
 offset_left = 280.0
 offset_top = 72.0
@@ -150,7 +156,7 @@ offset_right = 870.0
 offset_bottom = 135.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_s5hmk")
 
-[node name="Label" type="Label" parent="background"]
+[node name="resultsTxt" type="Label" parent="background"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -166,9 +172,10 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
 theme_override_fonts/font = ExtResource("3_ykr4e")
 theme_override_font_sizes/font_size = 22
-text = "lil blurb about how good or bad the player did"
+text = "text here"
+horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="background"]
+[node name="storyTxt" type="Label" parent="background"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -176,17 +183,17 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -418.0
-offset_top = 99.0
+offset_top = 124.0
 offset_right = 412.0
-offset_bottom = 160.0
+offset_bottom = 185.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
 theme_override_fonts/font = ExtResource("3_ykr4e")
 theme_override_font_sizes/font_size = 20
-text = "story about what happened to the cafe corresponding to the score player got
-hopefully two lines of info for them to read"
+text = "text story here"
 horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1

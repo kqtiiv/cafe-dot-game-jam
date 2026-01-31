@@ -11,7 +11,7 @@ func _ready() -> void:
 	playButton.pressed.connect(func(): 
 		audio.play()
 		await get_tree().create_timer(0.25).timeout
-		get_tree().change_scene_to_file("res://Scenes/MainLevel.tscn"))
+		SceneTransition.change_scene_to_file("res://Scenes/MainLevel.tscn"))
 	
 	
 	optionsButton.pressed.connect(func(): 

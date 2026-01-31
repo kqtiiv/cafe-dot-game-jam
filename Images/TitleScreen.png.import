@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dg88lybcxmocw"
-path="res://.godot/imported/happiness.png-edb72dce65a89b0f29871b3dcaceab0c.ctex"
+uid="uid://jsa5wg8610o5"
+path="res://.godot/imported/TitleScreen.png-9fcbf97486e053f531f95a960fbea880.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/omurice/happiness.png"
-dest_files=["res://.godot/imported/happiness.png-edb72dce65a89b0f29871b3dcaceab0c.ctex"]
+source_file="res://Images/TitleScreen.png"
+dest_files=["res://.godot/imported/TitleScreen.png-9fcbf97486e053f531f95a960fbea880.ctex"]
 
 [params]
 

@@ -14,7 +14,7 @@
 [ext_resource type="Script" uid="uid://d0bbviah2ncyb" path="res://Scripts/cooking.gd" id="8_7g1pw"]
 [ext_resource type="PackedScene" uid="uid://bhw7ep2i0u5wa" path="res://Assets/3D/World/omurice recipe page.glb" id="9_snxwr"]
 [ext_resource type="PackedScene" uid="uid://vfrh7bs2mh8v" path="res://Assets/3D/Interactables/rice cooker.glb" id="10_e5mp2"]
-[ext_resource type="PackedScene" uid="uid://brn4rs1o2w6wi" path="res://Assets/3D/World/window.glb" id="10_o8t5j"]
+[ext_resource type="PackedScene" uid="uid://eqsxueisjxlj" path="res://Assets/3D/World/window.glb" id="10_o8t5j"]
 [ext_resource type="PackedScene" uid="uid://sc4xvh310via" path="res://Assets/3D/Interactables/egg.glb" id="14_wwetx"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_dnhx3"]
@@ -109,6 +109,12 @@ use_collision = true
 size = Vector3(0.12, 7.069, 13.639)
 material = SubResource("StandardMaterial3D_o8t5j")
 
+[node name="Wall5" type="CSGBox3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 0.765, 0, 0, 0, 1, 5.889232, 2.35092, -1.561409)
+use_collision = true
+size = Vector3(0.12, 7.069, 13.639)
+material = SubResource("StandardMaterial3D_o8t5j")
+
 [node name="Wall2" type="CSGBox3D" parent="World"]
 transform = Transform3D(1, 0, 0, 0, 0.765, 0, 0, 0, 1, -5.699817, 2.3524175, -1.542366)
 use_collision = true
@@ -160,7 +166,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13387084, 1.0724323, -0.342
 shape = SubResource("BoxShape3D_ki5qo")
 
 [node name="Prompt" type="Label3D" parent="World/environment/WriteMessage"]
-transform = Transform3D(-0.99888617, 0, -0.0059598256, 0, 1, 0, 0.011070895, 0, -0.5377332, -0.23136264, 1.6627644, 5.138147)
+transform = Transform3D(0.99894416, 0, 0.0013891011, 0, 1, 0, -0.002580455, 0, 0.53776443, -0.23136264, 1.6627644, 5.138147)
 modulate = Color(0.22723183, 0.53280044, 0.69686294, 1)
 outline_modulate = Color(0.16470589, 0.41960785, 0.5529412, 1)
 text = "E"
@@ -237,7 +243,7 @@ transform = Transform3D(-0.765, 0, 1.3287631e-07, 0, 0.765, 0, -1.1551179e-07, 0
 transform = Transform3D(-0.765, 0, 1.3287631e-07, 0, 0.765, 0, -1.1551179e-07, 0, -0.88, 5.8123813, 2.5644183, 0.99077773)
 
 [node name="omurice recipe page" parent="World" instance=ExtResource("9_snxwr")]
-transform = Transform3D(2.655, 0, 0, 0, 2.655, 0, 0, 0, 2.655, -3.023809, 2.45914, 5.254028)
+transform = Transform3D(2.655, 0, 0, 0, 2.655, 0, 0, 0, 2.655, -2.8667014, 2.5111141, 5.2246523)
 
 [node name="Path3D" type="Path3D" parent="World"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.201359)

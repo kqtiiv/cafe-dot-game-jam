@@ -42,7 +42,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07802734, 1.0195796, -0.102
 shape = SubResource("BoxShape3D_vchtg")
 
 [node name="Prompt" type="Label3D" parent="Interact"]
-transform = Transform3D(-0.99993867, 0, -0.01108256, 0, 1, 0, 0.01108256, 0, -0.99993867, -0.22211024, 1.7293252, 6.415995)
+transform = Transform3D(0.99978065, 0, -0.02094242, 0, 1, 0, 0.02094242, 0, 0.99978065, -0.22211024, 1.7293252, 6.415995)
 modulate = Color(0.22723183, 0.53280044, 0.69686294, 1)
 outline_modulate = Color(0.16470589, 0.41960785, 0.5529412, 1)
 text = "E"

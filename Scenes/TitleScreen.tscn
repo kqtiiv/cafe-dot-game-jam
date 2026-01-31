@@ -1,12 +1,17 @@
-[gd_scene load_steps=16 format=3 uid="uid://bmw5q3hto54x5"]
+[gd_scene load_steps=19 format=3 uid="uid://bmw5q3hto54x5"]
 
 [ext_resource type="Script" uid="uid://dvrrsl3m5w25p" path="res://Scripts/main_menu.gd" id="1_8l4an"]
+[ext_resource type="Texture2D" uid="uid://uupc8tod2ue7" path="res://Images/titleBG.png" id="2_emot1"]
 [ext_resource type="FontFile" uid="uid://bskeu06nps0kw" path="res://Fonts/Start Story.ttf" id="3_bawyk"]
-[ext_resource type="Texture2D" uid="uid://dqb1yyj2u8vya" path="res://Images/menuscreen2wip.png" id="4_qfyqv"]
+[ext_resource type="Texture2D" uid="uid://jsa5wg8610o5" path="res://Images/TitleScreen.png" id="3_i5sur"]
 [ext_resource type="AudioStream" uid="uid://c8lib81jxdfps" path="res://Assets/Sounds/click.mp3" id="6_bawyk"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7whhf"]
+texture = ExtResource("2_emot1")
+modulate_color = Color(0.8352941, 0.9137255, 0.9137255, 1)
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_opfnp"]
-texture = ExtResource("4_qfyqv")
+texture = ExtResource("3_i5sur")
 modulate_color = Color(0.99332446, 0.9481452, 0.9041213, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yhxw7"]
@@ -17,8 +22,8 @@ corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 expand_margin_top = 5.0
 expand_margin_bottom = 5.0
-shadow_color = Color(0.99215686, 0.95686275, 0.72156864, 0)
-shadow_size = 10
+shadow_color = Color(0.16470589, 0.41960785, 0.5529412, 1)
+shadow_size = 3
 shadow_offset = Vector2(4.835, 5.605)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_trj04"]
@@ -29,8 +34,8 @@ corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 expand_margin_top = 5.0
 expand_margin_bottom = 5.0
-shadow_color = Color(0.5254902, 0.25882354, 0.3254902, 0)
-shadow_size = 10
+shadow_color = Color(0.43771598, 0.19713575, 0.11573001, 1)
+shadow_size = 3
 shadow_offset = Vector2(4.835, 5.605)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_16hvj"]
@@ -41,8 +46,20 @@ corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 expand_margin_top = 5.0
 expand_margin_bottom = 5.0
-shadow_color = Color(0.5254902, 0.25882354, 0.3254902, 0)
-shadow_size = 10
+shadow_color = Color(0.16470589, 0.41960785, 0.5529412, 1)
+shadow_size = 3
+shadow_offset = Vector2(4.835, 5.605)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5c2t2"]
+bg_color = Color(0.5176471, 0.23921569, 0.14509805, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color(0.4392157, 0.19607843, 0.11764706, 1)
+shadow_size = 3
 shadow_offset = Vector2(4.835, 5.605)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vr1f0"]
@@ -55,8 +72,8 @@ corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 expand_margin_top = 5.0
 expand_margin_bottom = 5.0
-shadow_color = Color(0.5254902, 0.25882354, 0.3254902, 0)
-shadow_size = 10
+shadow_color = Color(0.4392157, 0.19607843, 0.11764706, 1)
+shadow_size = 3
 shadow_offset = Vector2(4.835, 5.605)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5egv6"]
@@ -67,8 +84,8 @@ corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 expand_margin_top = 5.0
 expand_margin_bottom = 5.0
-shadow_color = Color(0.5254902, 0.25882354, 0.3254902, 0)
-shadow_size = 10
+shadow_color = Color(0.16470589, 0.41960785, 0.5529412, 1)
+shadow_size = 3
 shadow_offset = Vector2(4.835, 5.605)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vtepg"]
@@ -81,8 +98,8 @@ corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 expand_margin_top = 5.0
 expand_margin_bottom = 5.0
-shadow_color = Color(0.5254902, 0.25882354, 0.3254902, 0)
-shadow_size = 10
+shadow_color = Color(0.4392157, 0.19607843, 0.11764706, 1)
+shadow_size = 3
 shadow_offset = Vector2(4.835, 5.605)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m3bi6"]
@@ -93,8 +110,8 @@ corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 expand_margin_top = 5.0
 expand_margin_bottom = 5.0
-shadow_color = Color(0.5254902, 0.25882354, 0.3254902, 0)
-shadow_size = 10
+shadow_color = Color(0.16470589, 0.41960785, 0.5529412, 1)
+shadow_size = 3
 shadow_offset = Vector2(4.835, 5.605)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wyh8j"]
@@ -110,6 +127,15 @@ script = ExtResource("1_8l4an")
 playButton = NodePath("MainMenuUI/Content/Start")
 optionsButton = NodePath("MainMenuUI/Content/Settings")
 quitButton = NodePath("MainMenuUI/Content/Exit")
+
+[node name="BG" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_7whhf")
 
 [node name="MainMenuUI" type="Panel" parent="."]
 layout_mode = 1
@@ -127,9 +153,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -455.0
+offset_left = -470.0
 offset_top = 74.0
-offset_right = -193.08154
+offset_right = -208.08154
 offset_bottom = 274.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -148,6 +174,7 @@ theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_yhxw7")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_trj04")
 theme_override_styles/hover = SubResource("StyleBoxFlat_16hvj")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_5c2t2")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_vr1f0")
 text = "Start!"
 
@@ -164,6 +191,7 @@ theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_yhxw7")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_t1dhk")
 theme_override_styles/hover = SubResource("StyleBoxFlat_5egv6")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_5c2t2")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_vtepg")
 text = "Settings"
 
@@ -180,6 +208,7 @@ theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_yhxw7")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_8dnnj")
 theme_override_styles/hover = SubResource("StyleBoxFlat_m3bi6")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_5c2t2")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_wyh8j")
 text = "Exit"
 
