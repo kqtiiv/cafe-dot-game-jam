@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddditxcvl7751"
-path="res://.godot/imported/determination.png-7351487e997f4a91d8852aa9582e380d.ctex"
+uid="uid://djr0mc6ojpoyc"
+path="res://.godot/imported/progressbar.png-67287dabd91c10f9fd18e3bacac96252.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/omurice/determination.png"
-dest_files=["res://.godot/imported/determination.png-7351487e997f4a91d8852aa9582e380d.ctex"]
+source_file="res://Images/progressbar.png"
+dest_files=["res://.godot/imported/progressbar.png-67287dabd91c10f9fd18e3bacac96252.ctex"]
 
 [params]
 

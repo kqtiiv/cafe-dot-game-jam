@@ -4,10 +4,10 @@
 [ext_resource type="Script" uid="uid://dm4d0eymcri7w" path="res://Scripts/emotion_select.gd" id="1_vxms4"]
 [ext_resource type="FontFile" uid="uid://bskeu06nps0kw" path="res://Fonts/Start Story.ttf" id="2_itqyv"]
 [ext_resource type="Texture2D" uid="uid://b1i1iv0lo6ksc" path="res://Images/omurice/egg.png" id="3_cbffl"]
-[ext_resource type="Texture2D" uid="uid://ddditxcvl7751" path="res://Images/omurice/determination.png" id="4_dkhmf"]
-[ext_resource type="Texture2D" uid="uid://dg88lybcxmocw" path="res://Images/omurice/happiness.png" id="5_cnxox"]
-[ext_resource type="Texture2D" uid="uid://2nrok2wtgha4" path="res://Images/omurice/love.png" id="6_rvo3w"]
-[ext_resource type="Texture2D" uid="uid://cb18vkb35qsyu" path="res://Images/omurice/nostalgia.png" id="7_bbfc0"]
+[ext_resource type="Texture2D" uid="uid://clcpxkr1yjr67" path="res://Images/omurice/yougotthisEgg.png" id="4_vxms4"]
+[ext_resource type="Texture2D" uid="uid://cho1b26hwjs31" path="res://Images/omurice/kittyEgg.png" id="5_cbffl"]
+[ext_resource type="Texture2D" uid="uid://bpswi6dsm0f4s" path="res://Images/omurice/heartsEgg.png" id="6_dkhmf"]
+[ext_resource type="Texture2D" uid="uid://cafw5cfxinhqx" path="res://Images/omurice/keepdreaminEgg.png" id="7_cnxox"]
 [ext_resource type="Texture2D" uid="uid://bsc6wb8reglod" path="res://Images/omurice/affection.png" id="8_70471"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s8ppi"]
@@ -20,6 +20,9 @@ corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
+shadow_color = Color(0.9843137, 0.73333335, 0.25490198, 1)
+shadow_size = 5
+shadow_offset = Vector2(3.72, 2.455)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7w1rj"]
 bg_color = Color(0.9843137, 0.73333335, 0.25490198, 1)
@@ -134,25 +137,25 @@ texture = ExtResource("3_cbffl")
 visible = false
 position = Vector2(-367, 214)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("4_dkhmf")
+texture = ExtResource("4_vxms4")
 
 [node name="Happiness" type="Sprite2D" parent="EmotionSelect"]
 visible = false
 position = Vector2(-367, 214)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("5_cnxox")
+texture = ExtResource("5_cbffl")
 
 [node name="Love" type="Sprite2D" parent="EmotionSelect"]
 visible = false
 position = Vector2(-367, 214)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("6_rvo3w")
+texture = ExtResource("6_dkhmf")
 
 [node name="Nostalgia" type="Sprite2D" parent="EmotionSelect"]
 visible = false
 position = Vector2(-367, 214)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("7_bbfc0")
+texture = ExtResource("7_cnxox")
 
 [node name="Affection" type="Sprite2D" parent="EmotionSelect"]
 visible = false
@@ -168,9 +171,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -116.0
-offset_top = -240.5
+offset_top = -235.5
 offset_right = 117.0
-offset_bottom = 213.5
+offset_bottom = 218.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 31
@@ -199,7 +202,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_3l5kh")
 theme_override_styles/hover = SubResource("StyleBoxFlat_itqyv")
 theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_s8ppi")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_3sgvc")
-text = "Love"
+text = "Admiration"
 icon_alignment = 1
 
 [node name="emotion2" type="Button" parent="EmotionSelect/VBoxContainer"]
@@ -218,7 +221,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_3l5kh")
 theme_override_styles/hover = SubResource("StyleBoxFlat_itqyv")
 theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_s8ppi")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_3sgvc")
-text = "Determination"
+text = "Motivation"
 icon_alignment = 1
 
 [node name="emotion3" type="Button" parent="EmotionSelect/VBoxContainer"]
@@ -237,7 +240,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_3l5kh")
 theme_override_styles/hover = SubResource("StyleBoxFlat_itqyv")
 theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_s8ppi")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_3sgvc")
-text = "Nostaligia"
+text = "Nostalgia"
 icon_alignment = 1
 
 [node name="emotion4" type="Button" parent="EmotionSelect/VBoxContainer"]
@@ -275,7 +278,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_3l5kh")
 theme_override_styles/hover = SubResource("StyleBoxFlat_itqyv")
 theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_s8ppi")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_3sgvc")
-text = "Affection"
+text = " Kindness "
 icon_alignment = 1
 
 [node name="hintpanel" type="Panel" parent="."]

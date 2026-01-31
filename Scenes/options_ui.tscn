@@ -1,48 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://dswx4k1wmt5yh"]
+[gd_scene load_steps=8 format=3 uid="uid://dswx4k1wmt5yh"]
 
 [ext_resource type="Script" uid="uid://cnhpx34br3d0j" path="res://Scripts/options_ui.gd" id="1_fneb7"]
-[ext_resource type="FontFile" uid="uid://c42aj427552up" path="res://Fonts/Vividly-Regular.ttf" id="2_diyab"]
+[ext_resource type="Texture2D" uid="uid://5wtn2apa843m" path="res://Images/endgame_bg.png" id="2_fneb7"]
 [ext_resource type="FontFile" uid="uid://bskeu06nps0kw" path="res://Fonts/Start Story.ttf" id="3_fl4cm"]
 [ext_resource type="AudioStream" uid="uid://c8lib81jxdfps" path="res://Assets/Sounds/click.mp3" id="4_db4ok"]
+[ext_resource type="StyleBox" uid="uid://c5rvhyq5pgafy" path="res://Scenes/options_uiButtons.tres" id="4_diyab"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ba6r"]
-bg_color = Color(0.22723183, 0.53280044, 0.69686294, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ej0y"]
-bg_color = Color(0.5176471, 0.23921569, 0.14509805, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-expand_margin_top = 10.0
-expand_margin_bottom = 10.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2v8ph"]
-bg_color = Color(0.5176471, 0.23921569, 0.14509805, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-expand_margin_top = 10.0
-expand_margin_bottom = 10.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5imsp"]
-bg_color = Color(0.5176471, 0.23921569, 0.14509805, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-expand_margin_top = 10.0
-expand_margin_bottom = 10.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0e604"]
-bg_color = Color(0.5176471, 0.23921569, 0.14509805, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-expand_margin_top = 10.0
-expand_margin_bottom = 10.0
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_diyab"]
+texture = ExtResource("2_fneb7")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vhwmd"]
 
@@ -69,7 +34,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_7ba6r")
+theme_override_styles/panel = SubResource("StyleBoxTexture_diyab")
 
 [node name="Content" type="VBoxContainer" parent="OptionsUI"]
 layout_mode = 1
@@ -88,13 +53,13 @@ theme_override_constants/separation = 46
 
 [node name="OptionsText" type="Label" parent="OptionsUI/Content"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.9843137, 0.73333335, 0.25490198, 1)
-theme_override_colors/font_shadow_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
+theme_override_colors/font_color = Color(0.22723183, 0.53280044, 0.69686294, 1)
+theme_override_colors/font_shadow_color = Color(0.16470589, 0.41960785, 0.5529412, 1)
 theme_override_constants/shadow_offset_x = -4
 theme_override_constants/shadow_offset_y = 1
 theme_override_constants/outline_size = -205
-theme_override_fonts/font = ExtResource("2_diyab")
-theme_override_font_sizes/font_size = 76
+theme_override_fonts/font = ExtResource("3_fl4cm")
+theme_override_font_sizes/font_size = 65
 text = "Options"
 horizontal_alignment = 1
 uppercase = true
@@ -108,10 +73,10 @@ theme_override_colors/font_hover_color = Color(0.99215686, 0.95686275, 0.7215686
 theme_override_colors/font_hover_pressed_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
 theme_override_fonts/font = ExtResource("3_fl4cm")
 theme_override_font_sizes/font_size = 29
-theme_override_styles/normal = SubResource("StyleBoxFlat_3ej0y")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_2v8ph")
-theme_override_styles/hover = SubResource("StyleBoxFlat_5imsp")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_0e604")
+theme_override_styles/normal = ExtResource("4_diyab")
+theme_override_styles/pressed = ExtResource("4_diyab")
+theme_override_styles/hover = ExtResource("4_diyab")
+theme_override_styles/hover_pressed = ExtResource("4_diyab")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_vhwmd")
 text = "Sound Effects: 5"
 
@@ -124,10 +89,10 @@ theme_override_colors/font_hover_color = Color(0.99215686, 0.95686275, 0.7215686
 theme_override_colors/font_hover_pressed_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
 theme_override_fonts/font = ExtResource("3_fl4cm")
 theme_override_font_sizes/font_size = 29
-theme_override_styles/normal = SubResource("StyleBoxFlat_3ej0y")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_2v8ph")
-theme_override_styles/hover = SubResource("StyleBoxFlat_5imsp")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_0e604")
+theme_override_styles/normal = ExtResource("4_diyab")
+theme_override_styles/pressed = ExtResource("4_diyab")
+theme_override_styles/hover = ExtResource("4_diyab")
+theme_override_styles/hover_pressed = ExtResource("4_diyab")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_vhwmd")
 text = "Music: 5"
 
@@ -140,10 +105,10 @@ theme_override_colors/font_hover_color = Color(0.99215686, 0.95686275, 0.7215686
 theme_override_colors/font_hover_pressed_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
 theme_override_fonts/font = ExtResource("3_fl4cm")
 theme_override_font_sizes/font_size = 29
-theme_override_styles/normal = SubResource("StyleBoxFlat_3ej0y")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_2v8ph")
-theme_override_styles/hover = SubResource("StyleBoxFlat_5imsp")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_0e604")
+theme_override_styles/normal = ExtResource("4_diyab")
+theme_override_styles/pressed = ExtResource("4_diyab")
+theme_override_styles/hover = ExtResource("4_diyab")
+theme_override_styles/hover_pressed = ExtResource("4_diyab")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_vhwmd")
 text = "Back"
 
