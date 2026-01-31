@@ -1,9 +1,17 @@
 extends Control
 
 @onready var label: Label = $TopTxt/Label
+@onready var hold_bar: ProgressBar = $ProgressBar
 
 func _ready() -> void:
 	update_objective_text()
+	GameManager.update_hold_ui.connect(_on_hold_ui_updated)
+	hold_bar.hide()
+
+
+func _on_hold_ui_updated(percent: float, is_visible: bool) -> void:
+	hold_bar.visible = is_visible
+	hold_bar.value = percent
 
 func _process(_delta: float) -> void:
 	update_objective_text()

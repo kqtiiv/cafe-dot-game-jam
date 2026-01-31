@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://fngeonyditsh" path="res://Scripts/dialogue_manager.gd" id="5_lk7k8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vchtg"]
-size = Vector3(1.4745148, 1.9791641, 1.1408434)
+size = Vector3(2.0572145, 1.9791641, 1.6596648)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bfbkk"]
 bg_color = Color(0.5176471, 0.23921569, 0.14509805, 1)
@@ -38,7 +38,7 @@ npc_controller = NodePath("..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28274512, -0.05114758, 6.4616194)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interact/InteractArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.042010248, 1.0195796, -0.067644596)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07802734, 1.0195796, -0.10267717)
 shape = SubResource("BoxShape3D_vchtg")
 
 [node name="Prompt" type="Label3D" parent="Interact"]

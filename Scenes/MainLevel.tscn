@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://3i6i7utpdhxv"]
+[gd_scene load_steps=28 format=3 uid="uid://3i6i7utpdhxv"]
 
 [ext_resource type="PackedScene" uid="uid://dhhsekj4kfdfx" path="res://Assets/3D/World/environment.glb" id="1_8vsrk"]
 [ext_resource type="Script" uid="uid://c8r0w8ay0pbyh" path="res://Scripts/world.gd" id="1_b2f5p"]
@@ -9,9 +9,12 @@
 [ext_resource type="FontFile" uid="uid://bskeu06nps0kw" path="res://Fonts/Start Story.ttf" id="5_0e82a"]
 [ext_resource type="Texture2D" uid="uid://d12660gr4jidx" path="res://Assets/3D/World/floor.png" id="5_7g1pw"]
 [ext_resource type="AudioStream" uid="uid://ko3qh8jpk62o" path="res://Assets/Sounds/dingdong.mp3" id="7_s1b4b"]
+[ext_resource type="PackedScene" uid="uid://brof0gkfufrpq" path="res://Assets/3D/Interactables/plate.glb" id="7_w85lu"]
 [ext_resource type="Script" uid="uid://d0bbviah2ncyb" path="res://Scripts/cooking.gd" id="8_7g1pw"]
 [ext_resource type="PackedScene" uid="uid://bhw7ep2i0u5wa" path="res://Assets/3D/World/omurice recipe page.glb" id="9_snxwr"]
+[ext_resource type="PackedScene" uid="uid://vfrh7bs2mh8v" path="res://Assets/3D/Interactables/rice cooker.glb" id="10_e5mp2"]
 [ext_resource type="PackedScene" uid="uid://brn4rs1o2w6wi" path="res://Assets/3D/World/window.glb" id="10_o8t5j"]
+[ext_resource type="PackedScene" uid="uid://sc4xvh310via" path="res://Assets/3D/Interactables/egg.glb" id="14_wwetx"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_dnhx3"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -50,7 +53,7 @@ uv1_triplanar = true
 data = PackedVector3Array(10, 0, 10, -10, 0, 10, 10, 0, -10, -10, 0, 10, -10, 0, -10, 10, 0, -10)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ki5qo"]
-size = Vector3(0.50450134, 2.0848694, 1.761383)
+size = Vector3(0.50450134, 2.0848694, 2.0071564)
 
 [sub_resource type="Curve3D" id="Curve3D_txgp6"]
 _data = {
@@ -128,16 +131,20 @@ shape = SubResource("ConcavePolygonShape3D_u1ln4")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20322871, -0.00306499, -1.9737546)
 
 [node name="WriteMessage" type="Node3D" parent="World/environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.65757394, 0, 0, 0)
 
 [node name="WritingArea" type="Area3D" parent="World/environment/WriteMessage"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28274512, -0.05114758, 6.4616194)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/environment/WriteMessage/WritingArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13387084, 1.0724323, -0.46554852)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13387084, 1.0724323, -0.34266186)
 shape = SubResource("BoxShape3D_ki5qo")
 
+[node name="plate" parent="World/environment/WriteMessage/WritingArea" instance=ExtResource("7_w85lu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.5207416, 0.0474779, 0.9082176, -1.244425)
+
 [node name="Prompt" type="Label3D" parent="World/environment/WriteMessage"]
-transform = Transform3D(-0.99993867, 0, -0.01108256, 0, 1, 0, 0.01108256, 0, -0.99993867, -0.23136264, 1.6627644, 6.3448925)
+transform = Transform3D(-0.99888617, 0, -0.0059598256, 0, 1, 0, 0.011070895, 0, -0.5377332, -0.23136264, 1.6627644, 5.138147)
 modulate = Color(0.22723183, 0.53280044, 0.69686294, 1)
 outline_modulate = Color(0.16470589, 0.41960785, 0.5529412, 1)
 text = "E"
@@ -146,6 +153,8 @@ font_size = 42
 
 [node name="Cooking" type="Node3D" parent="World/environment"]
 script = ExtResource("8_7g1pw")
+required_step = 2
+next_step = 3
 
 [node name="CookingArea" type="Area3D" parent="World/environment/Cooking"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1669462, -0.05114758, 6.4616194)
@@ -162,12 +171,18 @@ text = "E"
 font = ExtResource("5_0e82a")
 font_size = 42
 
-[node name="ProgressBar" type="TextureProgressBar" parent="World/environment/Cooking"]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Interact" parent="World/environment/Cooking" instance=ExtResource("14_wwetx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02404046, 0.00306499, -0.0148797035)
+visible = false
 
 [node name="CookRice" type="Node3D" parent="World/environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.402732, 0, 0)
 script = ExtResource("8_7g1pw")
+required_step = 1
+next_step = 2
+
+[node name="Interact" parent="World/environment/CookRice" instance=ExtResource("10_e5mp2")]
+transform = Transform3D(0.998066, -0.062163427, 0, 0.062163427, 0.998066, 0, 0, 0, 1, 0.3549415, -0.028080463, -0.20781732)
 
 [node name="RiceArea" type="Area3D" parent="World/environment/CookRice"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0215499, -0.05114758, 6.4616194)
@@ -177,16 +192,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0077035427, 1.0724323, -0.4
 shape = SubResource("BoxShape3D_ki5qo")
 
 [node name="Prompt" type="Label3D" parent="World/environment/CookRice"]
-transform = Transform3D(-0.9992386, 0, -0.03901567, 0, 1, 0, 0.03901567, 0, -0.9992386, 1.0422399, 1.6810433, 6.34667)
+transform = Transform3D(-0.9992386, 0, -0.03901567, 0, 1, 0, 0.03901567, 0, -0.9992386, 1.0422399, 1.8872074, 6.34667)
 modulate = Color(0.22723183, 0.53280044, 0.69686294, 1)
 outline_modulate = Color(0.16306561, 0.41808778, 0.5538561, 1)
 text = "E"
 font = ExtResource("5_0e82a")
 font_size = 42
-
-[node name="ProgressBar" type="TextureProgressBar" parent="World/environment/CookRice"]
-offset_right = 40.0
-offset_bottom = 40.0
 
 [node name="Player" parent="World" groups=["Player"] instance=ExtResource("2_c77c4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.3405654)
