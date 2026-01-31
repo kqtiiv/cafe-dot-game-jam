@@ -4,13 +4,17 @@ extends Node3D
 @export var next_step: GameManager.CookingStep
 @export var hold_time: float = 2.0
 
+
 @onready var prompt: Label3D = $Prompt
 @onready var animation_obj: Node3D = $Interact
 @onready var animation_player: AnimationPlayer = $Interact/AnimationPlayer
+@onready var pop = $pop
+
 
 var is_holding: bool = false
 var current_hold_timer: float = 0.0
 var player_in_range: bool = false
+
 
 func _ready() -> void:
 	prompt.visible = false
@@ -26,6 +30,7 @@ func _process(delta: float) -> void:
 			
 			if required_step == GameManager.CookingStep.RICE_COOKER:
 				animation_player.play("rice")
+			
 			elif required_step == GameManager.CookingStep.STOVE:
 				animation_obj.show()
 				animation_player.play("egg")

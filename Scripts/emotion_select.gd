@@ -17,6 +17,7 @@ extends Control
 @export var image5: CanvasItem
 
 func _ready() -> void:
+	hide()
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	_hide_all_images()
 	
@@ -40,7 +41,6 @@ func _on_emotion_selected(selected_image: CanvasItem, index: int) -> void:
 	await get_tree().create_timer(1.5).timeout
 	var chosen_emotion = emotion_names[index]
 	GameManager.npc_emotions.append(chosen_emotion)
-	GameManager.npcs_served += 1
 	
 	# Check if we have served all 3 NPCs
 	if GameManager.npcs_served >= GameManager.MAX_NPCS:
@@ -53,4 +53,4 @@ func _go_to_results() -> void:
 
 func _return_to_kitchen() -> void:
 	GameManager.current_step = GameManager.CookingStep.SERVE
-	get_tree().change_scene_to_file("res://Scenes/MainLevel.tscn")
+	hide()

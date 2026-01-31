@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cb18vkb35qsyu"
-path="res://.godot/imported/nostalgia.png-997cccbaa9dfe50d2424aa306b6d9269.ctex"
+uid="uid://can3x63vcg8km"
+path="res://.godot/imported/finish1star.png-45e9c63ab639d004bb8ff2a9e069a22e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/omurice/nostalgia.png"
-dest_files=["res://.godot/imported/nostalgia.png-997cccbaa9dfe50d2424aa306b6d9269.ctex"]
+source_file="res://Images/finish1star.png"
+dest_files=["res://.godot/imported/finish1star.png-45e9c63ab639d004bb8ff2a9e069a22e.ctex"]
 
 [params]
 

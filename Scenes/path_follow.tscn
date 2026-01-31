@@ -30,10 +30,9 @@ script = ExtResource("1_rwv02")
 [node name="armature_004" parent="." instance=ExtResource("2_tqmci")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.020214438, 0, 0.75715256)
 
-[node name="Interact" type="Node3D" parent="." node_paths=PackedStringArray("npc_controller")]
+[node name="Interact" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27406955, 0, -6.239343)
 script = ExtResource("3_tqmci")
-npc_controller = NodePath("..")
 
 [node name="InteractArea" type="Area3D" parent="Interact"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28274512, -0.05114758, 6.4616194)
@@ -43,7 +42,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07802734, 1.0195796, -0.102
 shape = SubResource("BoxShape3D_vchtg")
 
 [node name="Prompt" type="Label3D" parent="Interact"]
-transform = Transform3D(-0.99993867, 0, -0.01108256, 0, 1, 0, 0.01108256, 0, -0.99993867, -0.22211024, 1.7293252, 6.415995)
+transform = Transform3D(0.99978065, 0, -0.02094242, 0, 1, 0, 0.02094242, 0, 0.99978065, -0.22211024, 1.7293252, 6.415995)
 modulate = Color(0.22723183, 0.53280044, 0.69686294, 1)
 outline_modulate = Color(0.16470589, 0.41960785, 0.5529412, 1)
 text = "E"

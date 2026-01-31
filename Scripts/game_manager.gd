@@ -3,6 +3,9 @@ var is_dialogue_active: bool = false
 
 enum CookingStep { TALK_TO_CUSTOMER, RICE_COOKER, STOVE, START_MINIGAME, SERVE }
 var current_step: CookingStep = CookingStep.TALK_TO_CUSTOMER
+signal request_next_npc
+
+const correct_emotions: Array[String] = ["Motivation", "Happiness", "Nostalgia"]
 
 var npc_emotions: Array[String] = []
 var npcs_served: int = 0

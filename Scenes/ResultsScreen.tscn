@@ -1,12 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://cim7p544gjx6u"]
+[gd_scene load_steps=12 format=3 uid="uid://b246gy54eqbls"]
 
 [ext_resource type="Script" uid="uid://yjli7eomq61e" path="res://Scripts/results_screen.gd" id="1_jxlxw"]
 [ext_resource type="Texture2D" uid="uid://5wtn2apa843m" path="res://Images/endgame_bg.png" id="2_gnyy0"]
+[ext_resource type="Texture2D" uid="uid://com52vqwf6n3c" path="res://Images/omurice/3star.png" id="2_vcfm3"]
+[ext_resource type="Texture2D" uid="uid://bl5da8x6k3bab" path="res://Images/omurice/2star.png" id="3_s5hmk"]
 [ext_resource type="FontFile" uid="uid://bskeu06nps0kw" path="res://Fonts/Start Story.ttf" id="3_ykr4e"]
-[ext_resource type="StyleBox" uid="uid://b8ab2apfhfhjl" path="res://endgame_buttons.tres" id="4_gnyy0"]
+[ext_resource type="Texture2D" uid="uid://d2cvsx2mr878j" path="res://Images/omurice/1star.png" id="4_7wt1v"]
+[ext_resource type="StyleBox" path="res://endgame_buttons.tres" id="4_gnyy0"]
+[ext_resource type="Texture2D" uid="uid://di6dktdk4r50p" path="res://Images/omurice/0star.png" id="8_s5hmk"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v8ikh"]
-texture = ExtResource("2_gnyy0")
+texture = ExtResource("2_ykr4e")
+modulate_color = Color(0.9867516, 0.9867516, 0.9867516, 0.8235294)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vcfm3"]
 bg_color = Color(0.5176471, 0.23921569, 0.14509805, 1)
@@ -36,7 +41,7 @@ corner_radius_bottom_left = 10
 shadow_color = Color(0.99215686, 0.95686275, 0.72156864, 0)
 shadow_size = 8
 
-[node name="Results" type="Control"]
+[node name="Results" type="Control" node_paths=PackedStringArray("message_label", "message_label_2", "result_image")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -44,6 +49,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_jxlxw")
+message_label = NodePath("background/Label")
+message_label_2 = NodePath("background/Label2")
+result_image = NodePath("TextureRect")
+perfect_image = ExtResource("2_vcfm3")
+good_image = ExtResource("3_s5hmk")
+bad_image = ExtResource("4_7wt1v")
 
 [node name="background" type="Panel" parent="."]
 layout_mode = 1
@@ -64,9 +75,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -376.5
-offset_top = 201.0
+offset_top = 226.0
 offset_right = 376.5
-offset_bottom = 272.0
+offset_bottom = 297.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 152
@@ -125,14 +136,19 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -434.5
-offset_top = 81.0
+offset_top = 106.0
 offset_right = 438.5
-offset_bottom = 172.0
+offset_bottom = 197.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_vcfm3")
 
-[node name="Panel" type="Panel" parent="background"]
+[node name="resultsEgg" type="Sprite2D" parent="background"]
+position = Vector2(569.00006, 301.00003)
+scale = Vector2(0.29641542, 0.29641545)
+texture = ExtResource("5_v8ikh")
+
+[node name="results" type="Panel" parent="background"]
 layout_mode = 0
 offset_left = 280.0
 offset_top = 72.0
@@ -140,7 +156,7 @@ offset_right = 870.0
 offset_bottom = 135.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_s5hmk")
 
-[node name="Label" type="Label" parent="background"]
+[node name="resultsTxt" type="Label" parent="background"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -156,9 +172,10 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
 theme_override_fonts/font = ExtResource("3_ykr4e")
 theme_override_font_sizes/font_size = 22
-text = "lil blurb about how good or bad the player did"
+text = "text here"
+horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="background"]
+[node name="storyTxt" type="Label" parent="background"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -166,14 +183,30 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -418.0
-offset_top = 99.0
+offset_top = 124.0
 offset_right = 412.0
-offset_bottom = 160.0
+offset_bottom = 185.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.99215686, 0.95686275, 0.72156864, 1)
 theme_override_fonts/font = ExtResource("3_ykr4e")
 theme_override_font_sizes/font_size = 20
-text = "story about what happened to the cafe corresponding to the score player got
-hopefully two lines of info for them to read"
+text = "text story here"
 horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -251.0
+offset_top = -208.0
+offset_right = 249.0
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_s5hmk")
+expand_mode = 3
