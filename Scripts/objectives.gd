@@ -8,7 +8,6 @@ func _ready() -> void:
 	GameManager.update_hold_ui.connect(_on_hold_ui_updated)
 	hold_bar.hide()
 
-
 func _on_hold_ui_updated(percent: float, is_visible: bool) -> void:
 	hold_bar.visible = is_visible
 	hold_bar.value = percent

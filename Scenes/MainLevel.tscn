@@ -140,7 +140,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28274512, -0.05114758, 6.4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13387084, 1.0724323, -0.34266186)
 shape = SubResource("BoxShape3D_ki5qo")
 
-[node name="plate" parent="World/environment/WriteMessage/WritingArea" instance=ExtResource("7_w85lu")]
+[node name="Plate" parent="World/environment/WriteMessage/WritingArea" instance=ExtResource("7_w85lu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.5207416, 0.0474779, 0.9082176, -1.244425)
 
 [node name="Prompt" type="Label3D" parent="World/environment/WriteMessage"]
