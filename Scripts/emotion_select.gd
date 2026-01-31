@@ -41,7 +41,6 @@ func _on_emotion_selected(selected_image: CanvasItem, index: int) -> void:
 	await get_tree().create_timer(1.5).timeout
 	var chosen_emotion = emotion_names[index]
 	GameManager.npc_emotions.append(chosen_emotion)
-	GameManager.npcs_served += 1
 	
 	# Check if we have served all 3 NPCs
 	if GameManager.npcs_served >= GameManager.MAX_NPCS:

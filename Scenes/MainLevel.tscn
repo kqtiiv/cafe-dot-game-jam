@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://3i6i7utpdhxv"]
+[gd_scene load_steps=31 format=3 uid="uid://3i6i7utpdhxv"]
 
 [ext_resource type="PackedScene" uid="uid://dhhsekj4kfdfx" path="res://Assets/3D/World/environment.glb" id="1_8vsrk"]
 [ext_resource type="Script" uid="uid://c8r0w8ay0pbyh" path="res://Scripts/world.gd" id="1_b2f5p"]
@@ -58,14 +58,29 @@ size = Vector3(0.50450134, 2.0848694, 2.0071564)
 
 [sub_resource type="Curve3D" id="Curve3D_txgp6"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -6.721384, 0.034504518, -0.18670654, 0, 0, 0, 0, 0, 0, -2.7088168, 0.033608466, -0.42923594, 0, 0, 0, 0, 0, 0, 0.842839, 0.044605494, -0.66682243, 0, 0, 0, 0, 0, 0, 3.291674, 0.054011703, -0.7083955),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -6.721384, 0.034504518, -0.18670654, 0, 0, 0, 0, 0, 0, -1.1542675, 0.033608466, -0.07845831, 0, 0, 0, 0, 0, 0, 1.3364555, 0.044555664, 3.1591792, 0, 0, 0, 0, 0, 0, 3.2713346, 0.054011703, 3.2015588),
 "tilts": PackedFloat32Array(0, 0, 0, 0)
 }
 point_count = 4
 
-[node name="MainWorld" type="Node3D"]
+[sub_resource type="Curve3D" id="Curve3D_e5mp2"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -6.1617894, 0, -6.3889565, 0, 0, 0, 0, 0, 0, -1.5896891, 0, -6.3340917, 0, 0, 0, 0, 0, 0, 2.3606062, 0, -6.8827443, 0, 0, 0, 0, 0, 0, 3.293314, 0, -6.846167),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[sub_resource type="Curve3D" id="Curve3D_wwetx"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -6.72873, 0, -6.425534, 0, 0, 0, 0, 0, 0, -2.815012, 0, -6.3889565, 0, 0, 0, 0, 0, 0, -1.3153628, 0, -4.852731, 0, 0, 0, 0, 0, 0, -1.0776137, 0, -2.0728946, 0, 0, 0, 0, 0, 0, -1.498247, 0, -1.0121666, 0, 0, 0, 0, 0, 0, -2.7784357, 0, -1.030455),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
+}
+point_count = 6
+
+[node name="MainWorld" type="Node3D" node_paths=PackedStringArray("paths")]
 script = ExtResource("1_b2f5p")
 npc_scene = ExtResource("2_7g1pw")
+paths = [NodePath("World/Path3D3"), NodePath("World/Path3D2"), NodePath("World/Path3D")]
 
 [node name="World" type="Node3D" parent="."]
 
@@ -227,6 +242,12 @@ transform = Transform3D(2.655, 0, 0, 0, 2.655, 0, 0, 0, 2.655, -3.023809, 2.4591
 [node name="Path3D" type="Path3D" parent="World"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.201359)
 curve = SubResource("Curve3D_txgp6")
+
+[node name="Path3D2" type="Path3D" parent="World"]
+curve = SubResource("Curve3D_e5mp2")
+
+[node name="Path3D3" type="Path3D" parent="World"]
+curve = SubResource("Curve3D_wwetx")
 
 [node name="PauseMenu" parent="." instance=ExtResource("1_r7jfx")]
 

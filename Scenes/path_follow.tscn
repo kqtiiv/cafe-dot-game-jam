@@ -30,10 +30,9 @@ script = ExtResource("1_rwv02")
 [node name="armature_004" parent="." instance=ExtResource("2_tqmci")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.020214438, 0, 0.75715256)
 
-[node name="Interact" type="Node3D" parent="." node_paths=PackedStringArray("npc_controller")]
+[node name="Interact" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27406955, 0, -6.239343)
 script = ExtResource("3_tqmci")
-npc_controller = NodePath("..")
 
 [node name="InteractArea" type="Area3D" parent="Interact"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28274512, -0.05114758, 6.4616194)
