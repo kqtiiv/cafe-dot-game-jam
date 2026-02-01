@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://3i6i7utpdhxv"]
+[gd_scene load_steps=42 format=3 uid="uid://3i6i7utpdhxv"]
 
 [ext_resource type="PackedScene" uid="uid://dhhsekj4kfdfx" path="res://Assets/3D/World/environment.glb" id="1_8vsrk"]
 [ext_resource type="Script" uid="uid://c8r0w8ay0pbyh" path="res://Scripts/world.gd" id="1_b2f5p"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://dcxbbt61cf6xw" path="res://Assets/3D/World/window.glb" id="10_o8t5j"]
 [ext_resource type="PackedScene" uid="uid://sc4xvh310via" path="res://Assets/3D/Interactables/egg.glb" id="14_wwetx"]
 [ext_resource type="Texture2D" uid="uid://cfe43ks62l3lh" path="res://Assets/3D/World/door.png" id="16_wwetx"]
+[ext_resource type="PackedScene" uid="uid://whxe8iylfh7o" path="res://Assets/3D/World/light.glb" id="17_tkw33"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_dnhx3"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -153,6 +154,9 @@ albedo_color = Color(0.48235294, 0.1882353, 0.1254902, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3w3qn"]
 albedo_color = Color(0.48235294, 0.1882353, 0.1254902, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kr6lr"]
+emission = Color(1, 1, 1, 1)
 
 [node name="MainWorld" type="Node3D" node_paths=PackedStringArray("paths")]
 script = ExtResource("1_b2f5p")
@@ -338,17 +342,20 @@ size = Vector3(11.670166, 0.001, 13.633179)
 material = SubResource("StandardMaterial3D_wwetx")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="World"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.6612906, 1.6061442)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10435057, 4.1451807, 1.9974477)
 light_color = Color(1, 0.7294118, 0.5294118, 1)
-light_energy = 0.282
+light_energy = 1.573
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
 light_size = 1.405
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="World"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.6612906, -4.170244)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10435057, 4.1451807, -4.002552)
 light_color = Color(1, 0.7294118, 0.5294118, 1)
-light_energy = 0.641
+light_energy = 1.573
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
 light_size = 1.405
-omni_range = 82.014
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="World"]
 transform = Transform3D(0.038890876, -0.58964753, 0.80672383, 0.028392999, 0.8076607, 0.58896357, -0.99884, 0, 0.0481525, 5.767559, 3.0479205, 0.88289356)
@@ -409,6 +416,17 @@ material = SubResource("StandardMaterial3D_txgp6")
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.8945484, -1.4095757)
 size = Vector3(0.08746338, 2.6101685, 0.22241211)
 material = SubResource("StandardMaterial3D_3w3qn")
+
+[node name="light" parent="World" instance=ExtResource("17_tkw33")]
+transform = Transform3D(0.705, 0, 0, 0, 0.705, 0, 0, 0, 0.705, -0.09655237, 4.482327, 1.9988976)
+
+[node name="light2" parent="World" instance=ExtResource("17_tkw33")]
+transform = Transform3D(0.705, 0, 0, 0, 0.705, 0, 0, 0, 0.705, -0.09655237, 4.482327, -4.0245233)
+
+[node name="Outside" type="CSGBox3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.774748, 0.84973145, -6.199449)
+size = Vector3(0.12689209, 2.699463, 2.206665)
+material = SubResource("StandardMaterial3D_kr6lr")
 
 [node name="PauseMenu" parent="." instance=ExtResource("1_r7jfx")]
 
