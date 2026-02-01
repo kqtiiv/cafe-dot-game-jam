@@ -32,15 +32,18 @@ func calculate_and_display():
 	
 	# Show Image & Message based on performance
 	if score == total_npcs:
-		message_label.text = "Perfect"
+		message_label.text = "Congratulations. You're now a certified empath!!"
+		message_label_2.text = "The cafe went on to become internet famous. Guy Fieri teared up when he visited. You got a handshake from Paul Hollywood. Even Gordan Ramsey approved!"
 		if perfect_image: result_image.texture = perfect_image
 		
 	elif score >= 1:
-		message_label.text = "Good job!"
+		message_label.text = "Okay so you've worked customer service before"
+		message_label_2.text = "Your place is definitely a town favorite! People comment on how friendly and quick the service is. Your parents are proud of how far you've come."
 		if good_image: result_image.texture = good_image
 		
 	else:
-		message_label.text = "Oh no..."
+		message_label.text = "You're a REALLY bad listener.... that's just sad :("
+		message_label_2.text = "Hoards of bad reviews flooded the cafe's Yelp page so you closed that day out of sheer embarrassment. I think it's time you find a new line of work."
 		if bad_image: result_image.texture = bad_image
 
 func _on_main_menu_button_pressed():

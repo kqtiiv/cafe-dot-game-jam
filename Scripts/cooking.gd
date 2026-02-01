@@ -8,7 +8,7 @@ extends Node3D
 @onready var prompt: Label3D = $Prompt
 @onready var animation_obj: Node3D = $Interact
 @onready var animation_player: AnimationPlayer = $Interact/AnimationPlayer
-@onready var pop = $pop
+
 
 
 var is_holding: bool = false
