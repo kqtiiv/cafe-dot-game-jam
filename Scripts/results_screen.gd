@@ -8,6 +8,8 @@ extends Control
 @export var good_image: Texture2D
 @export var bad_image: Texture2D
 
+@onready var audio = $button_click
+
 func _ready():
 	calculate_and_display()
 
@@ -46,9 +48,21 @@ func calculate_and_display():
 		message_label_2.text = "Hoards of bad reviews flooded the cafe's Yelp page so you closed that day out of sheer embarrassment. I think it's time you find a new line of work."
 		if bad_image: result_image.texture = bad_image
 
-func _on_main_menu_button_pressed():
+func _on_restart_pressed():
 	GameManager.npcs_served = 0
 	GameManager.npc_emotions.clear()
 	GameManager.current_step = GameManager.CookingStep.TALK_TO_CUSTOMER
 	
-	get_tree().change_scene_to_file("res://scenes/MainMenu.tscn")
+	SceneTransition.change_scene_to_file("res://Scenes/MainLevel.tscn")
+
+
+func _on_credits_pressed():
+	audio.play()
+	await get_tree().create_timer(0.25).timeout
+	SceneTransition.change_scene_to_file("res://Scenes/Credits.tscn")
+
+
+func _on_exit_pressed():
+	audio.play()
+	await get_tree().create_timer(0.25).timeout 
+	get_tree().quit()
